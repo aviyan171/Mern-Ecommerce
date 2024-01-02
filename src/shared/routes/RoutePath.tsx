@@ -1,7 +1,9 @@
-import Home from 'features/home/pages';
-import HomePage from 'features/navbar/pages';
+import { lazy } from 'react';
 import { Route } from 'react-router-dom';
 import Router from '.';
+
+const Home = lazy(() => import('features/home/pages'));
+const HomePage = lazy(() => import('features/navbar/pages'));
 
 function RoutePath() {
   return (
