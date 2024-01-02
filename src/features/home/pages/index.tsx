@@ -1,4 +1,4 @@
-import Banner from '../components/Banner';
+import Banner from '../components/Banner/Banner';
 import CoverPage from '../components/CoverPage';
 
 function Home() {
