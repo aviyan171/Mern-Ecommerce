@@ -8,7 +8,7 @@ function Banner() {
       <div className="max-w-NAVBAR_INNER_WIDTH mx-auto ">
         <BannerImage image={banner1} name="Clothing Collections 2030" />
         <div className="flex justify-between">
-          <div className="relative bottom-0 md:bottom-12 md:left-12">
+          <div className="relative bottom-0 md:bottom-12 ">
             <img src={banner2} alt="banner1" />
             <div className="mt-5">
               <p className="font-bold text-3xl mb-3 ">Accessories</p>
