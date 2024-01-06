@@ -1,3 +1,4 @@
+import MaxWidthLayout from 'shared/components/MaxWidthLayout';
 import banner1 from '../../../../shared/assets/jpg/banner-1.jpg';
 import banner2 from '../../../../shared/assets/jpg/banner-2.jpg';
 import banner3 from '../../../../shared/assets/jpg/banner-3.jpg';
@@ -5,7 +6,7 @@ import BannerImage from './BannerImage';
 function Banner() {
   return (
     <div className="py-25">
-      <div className="max-w-NAVBAR_INNER_WIDTH mx-auto ">
+      <MaxWidthLayout>
         <BannerImage image={banner1} name="Clothing Collections 2030" />
         <div className="flex justify-between">
           <div className="relative bottom-0 md:bottom-12 ">
@@ -22,7 +23,7 @@ function Banner() {
             <BannerImage image={banner3} name="Shoes Spring 2030" />
           </div>
         </div>
-      </div>
+      </MaxWidthLayout>
     </div>
   );
 }

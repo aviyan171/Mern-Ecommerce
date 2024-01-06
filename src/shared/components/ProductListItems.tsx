@@ -1,5 +1,5 @@
 import { BsArrowLeftRight, BsHeart, BsSearch } from 'react-icons/bs';
-import banner3 from '../../../../shared/assets/jpg/banner-3.jpg';
+import banner3 from '../../shared/assets/jpg/banner-3.jpg';
 function ProductListItems() {
   return (
     <div className="group">

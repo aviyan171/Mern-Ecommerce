@@ -5,6 +5,7 @@ import {
   FaTwitter,
 } from 'react-icons/fa';
 import Button from 'shared/components/Button';
+import MaxWidthLayout from 'shared/components/MaxWidthLayout';
 import landingImage from '../../../../shared/assets/jpg/landingimage.jpg';
 function CoverPage() {
   const handleShopNow = () => {};
@@ -13,8 +14,8 @@ function CoverPage() {
       className="min-h-[800px] bg-no-repeat bg-cover bg-center"
       style={{ backgroundImage: `url(${landingImage})` }}
     >
-      <div className="max-w-NAVBAR_INNER_WIDTH mx-auto pt-58 ">
-        <div className=" max-w-[682px] ">
+      <MaxWidthLayout>
+        <div className=" max-w-[682px] pt-58  ">
           <p className="text-sm text-red-500 mb-7 font-medium ">
             SUMMER COLLECTION
           </p>
@@ -33,7 +34,7 @@ function CoverPage() {
             <FaInstagram />
           </div>
         </div>
-      </div>
+      </MaxWidthLayout>
     </div>
   );
 }
