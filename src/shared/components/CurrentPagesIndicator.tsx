@@ -2,7 +2,7 @@ import { BsChevronRight } from 'react-icons/bs';
 import { useLocation } from 'react-router-dom';
 import MaxWidthLayout from 'shared/components/MaxWidthLayout';
 
-const CurrentPagesIndicator = () => {
+function CurrentPagesIndicator() {
   const location = useLocation();
   const locationName = location.pathname.replace('/store/', '');
   return (
@@ -19,6 +19,6 @@ const CurrentPagesIndicator = () => {
       </MaxWidthLayout>
     </div>
   );
-};
+}
 
 export default CurrentPagesIndicator;
