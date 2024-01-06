@@ -1,22 +1,37 @@
 import { BsBagCheck, BsSearch } from 'react-icons/bs';
 import { FaRegHeart } from 'react-icons/fa';
+import { Link, useLocation } from 'react-router-dom';
+import MaxWidthLayout from 'shared/components/MaxWidthLayout';
+import { PAGES } from 'shared/constants';
 import logo from '../../../shared/assets/png/logo.png';
 function Navbar() {
+  const location = useLocation();
+
+  const activeRoutes = (routes: string) => {
+    return location.pathname === routes;
+  };
   return (
     <div>
       <div className="py-7 bg-white ">
-        <div className="max-w-NAVBAR_INNER_WIDTH mx-auto">
+        <MaxWidthLayout>
           <div className="flex justify-between">
             <div className="">
               <img src={logo} alt="logo" />
             </div>
             <div>
               <ul className="grid grid-cols-6 cursor-pointer">
-                <li>Home</li>
-                <li>Shop</li>
-                <li>Pages</li>
-                <li>Blog</li>
-                <li>Contacts</li>
+                {PAGES.map(({ name, to }) => {
+                  return (
+                    <div key={name}>
+                      <div className="flex flex-col gap-1">
+                        <Link to={to}>{name}</Link>
+                        {activeRoutes(to) && (
+                          <div className="border-2 border-red-500 w-[50px]" />
+                        )}
+                      </div>
+                    </div>
+                  );
+                })}
               </ul>
             </div>
             <div>
@@ -34,7 +49,7 @@ function Navbar() {
               </ul>
             </div>
           </div>
-        </div>
+        </MaxWidthLayout>
       </div>
     </div>
   );

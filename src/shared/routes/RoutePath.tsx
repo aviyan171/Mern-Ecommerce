@@ -1,3 +1,4 @@
+import Category from 'features/category/pages';
 import { lazy } from 'react';
 import { Route } from 'react-router-dom';
 import Router from '.';
@@ -10,6 +11,7 @@ function RoutePath() {
     <Router>
       <Route path="/store" element={<HomePage />}>
         <Route path="home" element={<Home />} />
+        <Route path="category" element={<Category />} />
       </Route>
     </Router>
   );

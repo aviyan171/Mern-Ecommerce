@@ -1,10 +1,11 @@
 import { FaChevronDown } from 'react-icons/fa';
+import MaxWidthLayout from 'shared/components/MaxWidthLayout';
 
 function SignUpBar() {
   return (
     <div>
       <div className="bg-black py-3 h-[45.6px] text-white">
-        <div className="max-w-NAVBAR_INNER_WIDTH mx-auto">
+        <MaxWidthLayout>
           <div className="flex justify-between">
             <div>Free shipping, 30-day return or refund guarantee.</div>
             <div className="flex gap-7">
@@ -16,7 +17,7 @@ function SignUpBar() {
               </span>
             </div>
           </div>
-        </div>
+        </MaxWidthLayout>
       </div>
     </div>
   );

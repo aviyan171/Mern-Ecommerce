@@ -1,3 +1,34 @@
 export const MAX_WIDTH = {
   NAVBAR_INNER_WIDTH: '1170px',
 };
+
+export const UI_ROUTES = {
+  home: '/store/home',
+  category: '/store/category',
+  pages: '/store/pages',
+  blog: '/store/blog',
+  contacts: '/store/contacts',
+};
+
+export const PAGES = [
+  {
+    name: 'Home',
+    to: UI_ROUTES.home,
+  },
+  {
+    name: 'Shop',
+    to: UI_ROUTES.category,
+  },
+  {
+    name: 'Pages',
+    to: UI_ROUTES.pages,
+  },
+  {
+    name: 'Blog',
+    to: UI_ROUTES.blog,
+  },
+  {
+    name: 'Contacts',
+    to: UI_ROUTES.contacts,
+  },
+];

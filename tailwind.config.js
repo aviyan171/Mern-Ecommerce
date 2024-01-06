@@ -4,7 +4,11 @@ export default {
   content: ['./src/**/*.tsx'],
   theme: {
     spacing: spacing,
-    extend: {},
+    extend: {
+      colors: {
+        alabaster: '#f3f2ee',
+      },
+    },
   },
   plugins: [],
 };

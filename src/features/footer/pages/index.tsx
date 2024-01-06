@@ -1,11 +1,12 @@
 import { BsEnvelope } from 'react-icons/bs';
+import MaxWidthLayout from 'shared/components/MaxWidthLayout';
 import logo from '../../../shared/assets/png/footer-logo.png';
 import payment from '../../../shared/assets/png/payment.png';
 
 const Footer = () => {
   return (
-    <div className=" bg-black pt-[70px]">
-      <div className="max-w-NAVBAR_INNER_WIDTH mx-auto text-white">
+    <div className=" bg-black pt-[70px] text-white">
+      <MaxWidthLayout>
         <div className="grid grid-cols-4 gap-22 pb-[50px]">
           <div className="flex flex-col gap-8">
             <img src={logo} alt="logo" />
@@ -57,7 +58,7 @@ const Footer = () => {
             Copyright © 20242020 All rights reserved
           </p>
         </div>
-      </div>
+      </MaxWidthLayout>
     </div>
   );
 };
