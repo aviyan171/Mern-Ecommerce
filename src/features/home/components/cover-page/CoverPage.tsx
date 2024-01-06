@@ -5,7 +5,7 @@ import {
   FaTwitter,
 } from 'react-icons/fa';
 import Button from 'shared/components/Button';
-import landingImage from '../../../shared/assets/jpg/landingimage.jpg';
+import landingImage from '../../../../shared/assets/jpg/landingimage.jpg';
 function CoverPage() {
   const handleShopNow = () => {};
   return (
