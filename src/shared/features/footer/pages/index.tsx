@@ -5,7 +5,7 @@ import payment from '../../../assets/png/payment.png';
 
 const Footer = () => {
   return (
-    <div className=" bg-black pt-[70px] text-white">
+    <div className=" bg-black pt-[70px] text-white ">
       <MaxWidthLayout>
         <div className="grid grid-cols-4 gap-22 pb-[50px]">
           <div className="flex flex-col gap-8">

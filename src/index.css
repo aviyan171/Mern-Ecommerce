@@ -11,5 +11,7 @@
     .button-custom{
       @apply text-white bg-black py-3 px-8
     }
-    
+    .button-bg-white{
+      @apply bg-white text-black py-3 px-8
+    }
   }

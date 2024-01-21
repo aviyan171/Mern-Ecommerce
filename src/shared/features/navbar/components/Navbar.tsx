@@ -1,11 +1,12 @@
 import { BsBagCheck, BsSearch } from 'react-icons/bs';
 import { FaRegHeart } from 'react-icons/fa';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import MaxWidthLayout from 'shared/components/MaxWidthLayout';
-import { PAGES } from 'shared/constants';
+import { PAGES, UI_ROUTES } from 'shared/constants';
 import logo from '../../../assets/png/logo.png';
 function Navbar() {
   const location = useLocation();
+  const navigate = useNavigate();
 
   const activeRoutes = (routes: string) => {
     return location.pathname === routes;
@@ -42,7 +43,10 @@ function Navbar() {
                 <li>
                   <FaRegHeart />
                 </li>
-                <li className="flex items-center gap-3 flex-shrink-0">
+                <li
+                  className="flex items-center gap-3 flex-shrink-0 cursor-pointer"
+                  onClick={() => navigate(UI_ROUTES.cart)}
+                >
                   <BsBagCheck />
                   <span>$ 0.00</span>
                 </li>

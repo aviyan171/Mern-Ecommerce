@@ -8,7 +8,7 @@ function CurrentPagesIndicator() {
   return (
     <div className="py-10 bg-alabaster">
       <MaxWidthLayout>
-        <p className="mb-2 capitalize">{locationName}</p>
+        <p className="mb-2 capitalize font-bold">{locationName}</p>
         <div className="flex items-center gap-2">
           <p>Home</p>
           <div className="flex items-center gap-2">

@@ -1,3 +1,4 @@
+import { BsArrowRight } from 'react-icons/bs';
 import {
   FaFacebookF,
   FaInstagram,
@@ -26,7 +27,12 @@ function CoverPage() {
             A specialist label creating luxury essentials. Ethically crafted
             with an unwavering commitment to exceptional quality.
           </p>
-          <Button onClick={handleShopNow} text="shop now" />
+          <Button
+            onClick={handleShopNow}
+            text="shop now"
+            prefix
+            icon={<BsArrowRight />}
+          />
           <div className="flex gap-9 mt-50 cursor-pointer">
             <FaFacebookF />
             <FaTwitter />

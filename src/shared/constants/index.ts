@@ -8,6 +8,7 @@ export const UI_ROUTES = {
   pages: '/store/pages',
   blog: '/store/blog',
   contacts: '/store/contacts',
+  cart: '/store/cart',
 };
 
 export const PAGES = [
