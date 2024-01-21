@@ -4,7 +4,7 @@ interface IPros {
   onClick: VoidFunction;
   text: string;
 }
-const Button = ({ onClick, text }: IPros) => {
+function Button({ onClick, text }: IPros) {
   return (
     <button className="button-custom items-center " onClick={onClick}>
       <div className="flex gap-3">
@@ -13,6 +13,6 @@ const Button = ({ onClick, text }: IPros) => {
       </div>
     </button>
   );
-};
+}
 
 export default Button;

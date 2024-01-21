@@ -3,7 +3,7 @@ import { FaRegHeart } from 'react-icons/fa';
 import { Link, useLocation } from 'react-router-dom';
 import MaxWidthLayout from 'shared/components/MaxWidthLayout';
 import { PAGES } from 'shared/constants';
-import logo from '../../../shared/assets/png/logo.png';
+import logo from '../../../assets/png/logo.png';
 function Navbar() {
   const location = useLocation();
 

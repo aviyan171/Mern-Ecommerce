@@ -1,7 +1,7 @@
 import { BsEnvelope } from 'react-icons/bs';
 import MaxWidthLayout from 'shared/components/MaxWidthLayout';
-import logo from '../../../shared/assets/png/footer-logo.png';
-import payment from '../../../shared/assets/png/payment.png';
+import logo from '../../../assets/png/footer-logo.png';
+import payment from '../../../assets/png/payment.png';
 
 const Footer = () => {
   return (
