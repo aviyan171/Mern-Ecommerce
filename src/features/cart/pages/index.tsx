@@ -3,6 +3,7 @@ import MaxWidthLayout from 'shared/components/MaxWidthLayout';
 import CartButtonGroup from '../components/CartButtonGroup';
 import CartInfo from '../components/CartInfo';
 import CartItems from '../components/CartItems';
+import Checkout from '../components/Checkout';
 
 const Cart = () => {
   return (
@@ -10,7 +11,7 @@ const Cart = () => {
       <CurrentPagesIndicator />
       <div className="py-25">
         <MaxWidthLayout>
-          <div className="grid grid-cols-6  gap-4">
+          <div className="grid grid-cols-6  gap-7">
             <div className="col-span-4 ">
               <div className="mb-7">
                 <CartInfo />
@@ -20,7 +21,9 @@ const Cart = () => {
               </div>
               <CartButtonGroup />
             </div>
-            <div className=" col-span-2">2</div>
+            <div className=" col-span-2">
+              <Checkout />
+            </div>
           </div>
         </MaxWidthLayout>
       </div>
