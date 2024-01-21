@@ -1,7 +1,6 @@
-import { FaSpinner } from 'react-icons/fa';
-import Button from 'shared/components/Button';
 import CurrentPagesIndicator from 'shared/components/CurrentPagesIndicator';
 import MaxWidthLayout from 'shared/components/MaxWidthLayout';
+import CartButtonGroup from '../components/CartButtonGroup';
 import CartInfo from '../components/CartInfo';
 import CartItems from '../components/CartItems';
 
@@ -16,21 +15,10 @@ const Cart = () => {
               <div className="mb-7">
                 <CartInfo />
                 <CartItems />
+                <CartItems />
+                <CartItems />
               </div>
-              <div className="flex justify-between">
-                <Button
-                  text="Continue Shopping"
-                  onClick={() => ''}
-                  background="white"
-                />
-                <Button
-                  text="Update Cart"
-                  onClick={() => ''}
-                  background="black"
-                  suffix
-                  icon={<FaSpinner />}
-                />
-              </div>
+              <CartButtonGroup />
             </div>
             <div className=" col-span-2">2</div>
           </div>
