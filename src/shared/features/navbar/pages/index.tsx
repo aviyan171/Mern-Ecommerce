@@ -1,7 +1,7 @@
-import Footer from 'features/footer/pages';
-import Navbar from 'features/navbar/components/Navbar';
-import SignUpBar from 'features/navbar/components/SignUpBar';
 import { Outlet } from 'react-router-dom';
+import Footer from 'shared/features/footer/pages';
+import Navbar from '../components/Navbar';
+import SignUpBar from '../components/SignUpBar';
 
 function HomePage() {
   return (

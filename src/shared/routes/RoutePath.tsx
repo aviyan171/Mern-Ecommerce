@@ -4,7 +4,7 @@ import { Route } from 'react-router-dom';
 import Router from '.';
 
 const Home = lazy(() => import('features/home/pages'));
-const HomePage = lazy(() => import('features/navbar/pages'));
+const HomePage = lazy(() => import('shared/features/navbar/pages'));
 
 function RoutePath() {
   return (
