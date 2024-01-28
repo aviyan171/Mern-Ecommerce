@@ -16,7 +16,10 @@ function Navbar() {
       <div className="py-7 bg-white ">
         <MaxWidthLayout>
           <div className="flex justify-between">
-            <div className="">
+            <div
+              className="cursor-pointer"
+              onClick={() => navigate(UI_ROUTES.home)}
+            >
               <img src={logo} alt="logo" />
             </div>
             <div>

@@ -1,8 +1,14 @@
 import { BsArrowLeftRight, BsHeart, BsSearch } from 'react-icons/bs';
+import { useNavigate } from 'react-router-dom';
+import { UI_ROUTES } from 'shared/constants';
 import banner3 from '../../shared/assets/jpg/banner-3.jpg';
 function ProductListItems() {
+  const navigate = useNavigate();
   return (
-    <div className="group">
+    <div
+      className="group cursor-pointer"
+      onClick={() => navigate(UI_ROUTES.productDetails)}
+    >
       <div
         className="h-[256px] bg-no-repeat bg-cover relative  "
         style={{ backgroundImage: `url(${banner3})` }}
