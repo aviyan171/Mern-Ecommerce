@@ -34,3 +34,5 @@ export const PAGES = [
     to: UI_ROUTES.contacts,
   },
 ];
+
+export const sizes = ['XXL', 'XL', 'L', 'S'];

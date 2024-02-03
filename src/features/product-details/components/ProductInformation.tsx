@@ -6,8 +6,6 @@ import SelectSize from './SelectSize';
 function ProductInformation() {
   const [size, setSize] = useState('XXL');
 
-  const sizes = ['XXL', 'XL', 'L', 'S'];
-
   const handleSetSize = (value: string) => {
     setSize(value);
   };
@@ -32,17 +30,8 @@ function ProductInformation() {
         </p>
         <div className="flex gap-3 items-center mb-9">
           <p>Size : </p>
-          <div className="flex gap-2">
-            {sizes.map((i) => {
-              return (
-                <SelectSize
-                  i={i}
-                  handleSetSize={handleSetSize}
-                  isSelected={size === i}
-                  key={i}
-                />
-              );
-            })}
+          <div>
+            <SelectSize handleSetSize={handleSetSize} selectedSize={size} />
           </div>
         </div>
         <div>
