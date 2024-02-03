@@ -7,6 +7,7 @@ import Router from '.';
 const Home = lazy(() => import('features/home/pages'));
 const HomePage = lazy(() => import('shared/features/navbar/pages'));
 const Cart = lazy(() => import('features/cart/pages'));
+const ProductDetails = lazy(() => import('features/product-details/pages'));
 
 function RoutePath() {
   return (
@@ -15,6 +16,7 @@ function RoutePath() {
         <Route path={UI_ROUTES.home} element={<Home />} />
         <Route path={UI_ROUTES.category} element={<Category />} />
         <Route path={UI_ROUTES.cart} element={<Cart />} />
+        <Route path={UI_ROUTES.productDetails} element={<ProductDetails />} />
       </Route>
     </Router>
   );
