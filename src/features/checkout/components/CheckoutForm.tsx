@@ -20,7 +20,7 @@ function CheckoutForm() {
       <form onSubmit={methods.handleSubmit(onSubmit)}>
         <div className="my-10">
           <div className="flex gap-10">
-            <div className="flex-[3]">
+            <div className="flex-[4]">
               <p className="font-bold pb-6">BILLING DETAILS</p>
               <div className="mb-8">
                 <Divider />
