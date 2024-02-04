@@ -9,6 +9,7 @@ const HomePage = lazy(() => import('shared/features/navbar/pages'));
 const Cart = lazy(() => import('features/cart/pages'));
 const ProductDetails = lazy(() => import('features/product-details/pages'));
 const Checkout = lazy(() => import('features/checkout/pages'));
+const Contact = lazy(() => import('features/contact/pages'));
 
 function RoutePath() {
   return (
@@ -19,6 +20,7 @@ function RoutePath() {
         <Route path={UI_ROUTES.cart} element={<Cart />} />
         <Route path={UI_ROUTES.productDetails} element={<ProductDetails />} />
         <Route path={UI_ROUTES.checkout} element={<Checkout />} />
+        <Route path={UI_ROUTES.contacts} element={<Contact />} />
       </Route>
     </Router>
   );

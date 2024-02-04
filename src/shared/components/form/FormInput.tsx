@@ -4,20 +4,37 @@ interface IProps extends React.InputHTMLAttributes<HTMLInputElement> {
   name: string;
   label: string;
   isRequired?: boolean;
+  multiline?: boolean;
+  rows?: number;
 }
-function FormInput({ name, label, isRequired = false, ...props }: IProps) {
+function FormInput({
+  name,
+  label,
+  isRequired = false,
+  multiline = false,
+  rows = 7,
+  ...props
+}: IProps) {
   const { register } = useFormContext();
   return (
     <div>
       <p className="mb-3 text-sm">
         {label} <span className="text-red-500">{isRequired ? '*' : ''}</span>
       </p>
-      <input
-        {...props}
-        {...register(name)}
-        type="text"
-        className="h-[50px] border-[1px] border-slate-300  focus:outline-none pl-5 text-slate-400 w-full"
-      />
+      {!multiline ? (
+        <input
+          {...props}
+          {...register(name)}
+          type="text"
+          className={`h-[50px] border-[1px] border-slate-300  focus:outline-none pl-5 text-slate-400 w-full`}
+        />
+      ) : (
+        <textarea
+          rows={rows}
+          {...register(name)}
+          className={` border-[1px] border-slate-300  focus:outline-none p-5 text-slate-400 w-full`}
+        />
+      )}
     </div>
   );
 }
