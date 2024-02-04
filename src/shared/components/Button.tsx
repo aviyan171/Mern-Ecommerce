@@ -1,14 +1,24 @@
 interface IPros {
-  onClick: VoidFunction;
+  onClick?: VoidFunction;
   text: string;
   suffix?: boolean;
   prefix?: boolean;
   icon?: React.ReactNode;
   background: 'white' | 'black';
+  type?: 'button' | 'reset' | 'submit';
 }
-function Button({ onClick, text, suffix, prefix, icon, background }: IPros) {
+function Button({
+  onClick = undefined,
+  text,
+  suffix,
+  prefix,
+  icon,
+  background,
+  type,
+}: IPros) {
   return (
     <button
+      type={type}
       className={`${
         background === 'black' ? ' button-custom' : 'button-bg-white'
       } items-center border-2 border-slate-300`}
@@ -27,5 +37,6 @@ Button.defaultProps = {
   prefix: false,
   icon: undefined,
   background: 'black',
+  type: 'button',
 };
 export default Button;

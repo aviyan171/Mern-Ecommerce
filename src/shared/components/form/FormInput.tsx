@@ -3,12 +3,15 @@ import { useFormContext } from 'react-hook-form';
 interface IProps extends React.InputHTMLAttributes<HTMLInputElement> {
   name: string;
   label: string;
+  isRequired?: boolean;
 }
-function FormInput({ name, label, ...props }: IProps) {
+function FormInput({ name, label, isRequired = false, ...props }: IProps) {
   const { register } = useFormContext();
   return (
     <div>
-      <p className="mb-3 text-sm">{label}</p>
+      <p className="mb-3 text-sm">
+        {label} <span className="text-red-500">{isRequired ? '*' : ''}</span>
+      </p>
       <input
         {...props}
         {...register(name)}

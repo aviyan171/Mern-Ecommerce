@@ -1,4 +1,6 @@
-export const checkoutDefaultValues = {
+import { ICheckoutForm } from '../interface';
+
+export const checkoutDefaultValues: ICheckoutForm = {
   firstName: '',
   lastName: '',
   country: '',
