@@ -22,7 +22,7 @@ function Button({
     <button
       type={type}
       className={`${
-        background === 'black' ? ' button-custom' : 'button-bg-white'
+        background === 'black' ? 'button-custom' : 'button-bg-white'
       } items-center border-2 border-slate-300 w-${
         fullWidth ? 'full' : 'auto'
       }`}

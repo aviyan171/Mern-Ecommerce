@@ -23,15 +23,16 @@ function Navbar() {
               <img src={logo} alt="logo" />
             </div>
             <div>
-              <ul className="grid grid-cols-6 cursor-pointer">
+              <ul className="flex gap-10 cursor-pointer ">
                 {PAGES.map(({ name, to }) => {
                   return (
                     <div key={name}>
-                      <div className="flex flex-col gap-1">
+                      <div
+                        className={`${
+                          activeRoutes(to) && 'border-b-2 border-red-500 pb-1'
+                        }`}
+                      >
                         <Link to={to}>{name}</Link>
-                        {activeRoutes(to) && (
-                          <div className="border-2 border-red-500 w-[50px]" />
-                        )}
                       </div>
                     </div>
                   );

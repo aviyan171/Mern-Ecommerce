@@ -22,14 +22,14 @@ export const PAGES = [
     name: 'Shop',
     to: UI_ROUTES.category,
   },
-  {
-    name: 'Pages',
-    to: UI_ROUTES.pages,
-  },
-  {
-    name: 'Blog',
-    to: UI_ROUTES.blog,
-  },
+  // {
+  //   name: 'Pages',
+  //   to: UI_ROUTES.pages,
+  // },
+  // {
+  //   name: 'Blog',
+  //   to: UI_ROUTES.blog,
+  // },
   {
     name: 'Contacts',
     to: UI_ROUTES.contacts,
