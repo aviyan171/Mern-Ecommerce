@@ -1,8 +1,11 @@
 import { BsCart } from 'react-icons/bs';
+import { useNavigate } from 'react-router-dom';
 import Button from 'shared/components/Button';
+import { UI_ROUTES } from 'shared/constants';
 import CouponInput from './CouponInput';
 
-function Checkout() {
+function CartTotal() {
+  const navigate = useNavigate();
   return (
     <div>
       <div className="mb-15">
@@ -21,7 +24,7 @@ function Checkout() {
           </div>
           <Button
             text="Proceed to checkout"
-            onClick={() => ''}
+            onClick={() => navigate(UI_ROUTES.checkout)}
             prefix
             icon={<BsCart />}
           />
@@ -31,4 +34,4 @@ function Checkout() {
   );
 }
 
-export default Checkout;
+export default CartTotal;

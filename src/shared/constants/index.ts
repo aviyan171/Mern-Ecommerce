@@ -10,6 +10,7 @@ export const UI_ROUTES = {
   contacts: '/store/contacts',
   cart: '/store/cart',
   productDetails: '/store/product-details',
+  checkout: '/store/checkout',
 };
 
 export const PAGES = [

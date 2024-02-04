@@ -3,7 +3,7 @@ import MaxWidthLayout from 'shared/components/MaxWidthLayout';
 import CartButtonGroup from '../components/CartButtonGroup';
 import CartInfo from '../components/CartInfo';
 import CartItems from '../components/CartItems';
-import Checkout from '../components/Checkout';
+import CartTotal from '../components/CartTotal';
 
 const Cart = () => {
   return (
@@ -22,7 +22,7 @@ const Cart = () => {
               <CartButtonGroup />
             </div>
             <div className=" col-span-2">
-              <Checkout />
+              <CartTotal />
             </div>
           </div>
         </MaxWidthLayout>
