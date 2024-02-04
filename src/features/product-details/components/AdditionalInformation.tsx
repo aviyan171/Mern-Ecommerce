@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import Divider from 'shared/components/Divider';
 
 function AdditionalInformation() {
   const [tab, setTab] = useState(0);
@@ -25,7 +26,7 @@ function AdditionalInformation() {
           );
         })}
       </div>
-      <div className="border-[1px] border-slate-200  " />
+      <Divider />
       <div className="py-9">
         {tab === 0 && (
           <p>
