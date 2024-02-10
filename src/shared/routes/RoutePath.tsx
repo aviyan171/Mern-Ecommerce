@@ -19,7 +19,7 @@ function RoutePath() {
       <Route element={<AuthLayout />}>
         <Route path={UI_ROUTES.login} element={<Login />} />
       </Route>
-      <Route path="/store" element={<HomePage />}>
+      <Route element={<HomePage />}>
         <Route path={UI_ROUTES.home} element={<Home />} />
         <Route path={UI_ROUTES.category} element={<Category />} />
         <Route path={UI_ROUTES.cart} element={<Cart />} />
