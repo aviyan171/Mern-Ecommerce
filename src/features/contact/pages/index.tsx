@@ -1,5 +1,5 @@
 import GoogleMapLocation from 'shared/components/GoogleMapLocation';
-import MaxWidthLayout from 'shared/components/MaxWidthLayout';
+import MaxWidthLayout from 'shared/layout/MaxWidthLayout';
 import ContactDetails from './ContactDetails';
 import ContactForm from './ContactForm';
 

@@ -6,7 +6,7 @@ import {
   FaTwitter,
 } from 'react-icons/fa';
 import Button from 'shared/components/Button';
-import MaxWidthLayout from 'shared/components/MaxWidthLayout';
+import MaxWidthLayout from 'shared/layout/MaxWidthLayout';
 import landingImage from '../../../../shared/assets/jpg/landingimage.jpg';
 function CoverPage() {
   const handleShopNow = () => {};
