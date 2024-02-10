@@ -3,7 +3,7 @@ import Divider from 'shared/components/Divider';
 
 function OrderDetails() {
   return (
-    <div className="p-8 bg-alabaster w-full">
+    <div className="p-8 bg-alabaster w-full sticky top-5">
       <p className="uppercase font-bold text-2xl pb-6">Your order</p>
       <div className="mb-7">
         <Divider />
