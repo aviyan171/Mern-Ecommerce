@@ -1,7 +1,9 @@
+import Login from 'features/auth/login/pages';
 import Category from 'features/category/pages';
 import { lazy } from 'react';
 import { Route } from 'react-router-dom';
 import { UI_ROUTES } from 'shared/constants';
+import AuthLayout from 'shared/layout/AuthLayout';
 import Router from '.';
 
 const Home = lazy(() => import('features/home/pages'));
@@ -14,6 +16,9 @@ const Contact = lazy(() => import('features/contact/pages'));
 function RoutePath() {
   return (
     <Router>
+      <Route element={<AuthLayout />}>
+        <Route path={UI_ROUTES.login} element={<Login />} />
+      </Route>
       <Route path="/store" element={<HomePage />}>
         <Route path={UI_ROUTES.home} element={<Home />} />
         <Route path={UI_ROUTES.category} element={<Category />} />

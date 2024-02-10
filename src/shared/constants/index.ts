@@ -3,6 +3,7 @@ export const MAX_WIDTH = {
 };
 
 export const UI_ROUTES = {
+  login: '/',
   home: '/store/home',
   category: '/store/category',
   pages: '/store/pages',
