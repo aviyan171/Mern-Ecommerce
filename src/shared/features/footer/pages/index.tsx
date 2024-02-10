@@ -1,5 +1,5 @@
 import { BsEnvelope } from 'react-icons/bs';
-import MaxWidthLayout from 'shared/components/MaxWidthLayout';
+import MaxWidthLayout from 'shared/layout/MaxWidthLayout';
 import logo from '../../../assets/png/footer-logo.png';
 import payment from '../../../assets/png/payment.png';
 

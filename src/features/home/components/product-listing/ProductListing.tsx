@@ -1,4 +1,4 @@
-import MaxWidthLayout from 'shared/components/MaxWidthLayout';
+import MaxWidthLayout from 'shared/layout/MaxWidthLayout';
 import ProductListItems from '../../../../shared/components/ProductListItems';
 
 function ProductListing() {

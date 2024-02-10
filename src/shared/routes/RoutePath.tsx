@@ -1,4 +1,5 @@
 import Login from 'features/auth/login/pages';
+import Register from 'features/auth/register/page';
 import Category from 'features/category/pages';
 import { lazy } from 'react';
 import { Route } from 'react-router-dom';
@@ -18,6 +19,7 @@ function RoutePath() {
     <Router>
       <Route element={<AuthLayout />}>
         <Route path={UI_ROUTES.login} element={<Login />} />
+        <Route path={UI_ROUTES.register} element={<Register />} />
       </Route>
       <Route element={<HomePage />}>
         <Route path={UI_ROUTES.home} element={<Home />} />

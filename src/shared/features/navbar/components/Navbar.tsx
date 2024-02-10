@@ -1,8 +1,8 @@
 import { BsBagCheck, BsSearch } from 'react-icons/bs';
 import { FaRegHeart } from 'react-icons/fa';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import MaxWidthLayout from 'shared/components/MaxWidthLayout';
 import { PAGES, UI_ROUTES } from 'shared/constants';
+import MaxWidthLayout from 'shared/layout/MaxWidthLayout';
 import logo from '../../../assets/png/logo.png';
 function Navbar() {
   const location = useLocation();

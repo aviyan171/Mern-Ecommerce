@@ -26,13 +26,13 @@ function FormInput({
           {...props}
           {...register(name)}
           type="text"
-          className="h-[50px] border-[1px] border-slate-300  focus:outline-none pl-5 text-slate-400 w-full bg-transparent"
+          className="h-[50px] border-[1px] text-sm border-slate-300  focus:outline-none pl-5 text-slate-400 w-full bg-transparent"
         />
       ) : (
         <textarea
           rows={rows}
           {...register(name)}
-          className=" border-[1px] border-slate-300  focus:outline-none p-5 text-slate-400 w-full bg-transparent"
+          className=" border-[1px] border-slate-300 text-sm focus:outline-none p-5 text-slate-400 w-full bg-transparent"
         />
       )}
     </div>

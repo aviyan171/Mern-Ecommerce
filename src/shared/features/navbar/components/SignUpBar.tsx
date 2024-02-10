@@ -1,5 +1,5 @@
 import { FaChevronDown } from 'react-icons/fa';
-import MaxWidthLayout from 'shared/components/MaxWidthLayout';
+import MaxWidthLayout from 'shared/layout/MaxWidthLayout';
 
 function SignUpBar() {
   return (

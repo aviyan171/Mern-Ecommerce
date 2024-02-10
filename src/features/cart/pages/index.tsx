@@ -1,5 +1,5 @@
 import CurrentPagesIndicator from 'shared/components/CurrentPagesIndicator';
-import MaxWidthLayout from 'shared/components/MaxWidthLayout';
+import MaxWidthLayout from 'shared/layout/MaxWidthLayout';
 import CartButtonGroup from '../components/CartButtonGroup';
 import CartInfo from '../components/CartInfo';
 import CartItems from '../components/CartItems';

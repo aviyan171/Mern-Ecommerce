@@ -1,5 +1,5 @@
 import CurrentPagesIndicator from 'shared/components/CurrentPagesIndicator';
-import MaxWidthLayout from 'shared/components/MaxWidthLayout';
+import MaxWidthLayout from 'shared/layout/MaxWidthLayout';
 import CheckoutForm from '../components/CheckoutForm';
 
 function Checkout() {

@@ -1,6 +1,6 @@
 import { BsChevronRight } from 'react-icons/bs';
 import { useLocation } from 'react-router-dom';
-import MaxWidthLayout from 'shared/components/MaxWidthLayout';
+import MaxWidthLayout from 'shared/layout/MaxWidthLayout';
 
 interface IProps {
   center?: boolean;
