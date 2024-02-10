@@ -8,7 +8,7 @@ import AuthLayout from 'shared/layout/AuthLayout';
 import Router from '.';
 
 const Home = lazy(() => import('features/home/pages'));
-const HomePage = lazy(() => import('shared/features/navbar/pages'));
+const HomePageLayout = lazy(() => import('shared/layout/HomePageLayout'));
 const Cart = lazy(() => import('features/cart/pages'));
 const ProductDetails = lazy(() => import('features/product-details/pages'));
 const Checkout = lazy(() => import('features/checkout/pages'));
@@ -21,7 +21,7 @@ function RoutePath() {
         <Route path={UI_ROUTES.login} element={<Login />} />
         <Route path={UI_ROUTES.register} element={<Register />} />
       </Route>
-      <Route element={<HomePage />}>
+      <Route element={<HomePageLayout />}>
         <Route path={UI_ROUTES.home} element={<Home />} />
         <Route path={UI_ROUTES.category} element={<Category />} />
         <Route path={UI_ROUTES.cart} element={<Cart />} />
