@@ -6,7 +6,7 @@ import SocialAccoutLoginButton from './SocialAccoutLoginButton';
 export const LoginForm = () => {
   return (
     <div>
-      <div className="flex flex-col gap-2">
+      <div className="flex flex-col gap-2  ">
         <SocialAccoutLoginButton icon={<BsFacebook />} text="facebook" />
         <SocialAccoutLoginButton icon={<BsGoogle />} text="google" />
         <SocialAccoutLoginButton icon={<BsApple />} text="apple" />

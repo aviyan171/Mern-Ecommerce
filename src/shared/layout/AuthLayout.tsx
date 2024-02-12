@@ -1,4 +1,5 @@
 import { Outlet, useLocation } from 'react-router-dom';
+import { UI_ROUTES } from 'shared/constants';
 import backGroundImage from '../assets/jpg/LoginBackground.jpg';
 
 interface IProps {
@@ -9,8 +10,8 @@ function AuthLayout() {
   const path = location.pathname;
 
   const message: IProps = {
-    ['/']: 'Sign in to continue to your account',
-    ['/register']: 'Register your account',
+    [UI_ROUTES.login]: 'Sign in to continue to your account',
+    [UI_ROUTES.register]: 'Register your account',
   };
 
   return (
@@ -25,7 +26,7 @@ function AuthLayout() {
           <div className=" bg-alabaster rounded-s-xl rounded-e-xl overflow-hidden ">
             <div className="flex h-full">
               <div className="flex-[3] bg-black text-white ">
-                <div className="flex flex-col justify-center px-4  h-full gap-5">
+                <div className="flex flex-col justify-center  px-4  h-full gap-5">
                   <p className="text-xl font-bold ">
                     Welcome Back to Abhiyan Store
                   </p>
