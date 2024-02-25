@@ -4,6 +4,7 @@ import Category from 'features/category/pages';
 import { lazy } from 'react';
 import { Route } from 'react-router-dom';
 import { UI_ROUTES } from 'shared/constants';
+import { AdminLayout } from 'shared/layout/AdminLayout';
 import AuthLayout from 'shared/layout/AuthLayout';
 import Router from '.';
 
@@ -13,6 +14,7 @@ const Cart = lazy(() => import('features/cart/pages'));
 const ProductDetails = lazy(() => import('features/product-details/pages'));
 const Checkout = lazy(() => import('features/checkout/pages'));
 const Contact = lazy(() => import('features/contact/pages'));
+const AdminHome = lazy(() => import('features/admin/home/pages'));
 
 function RoutePath() {
   return (
@@ -20,6 +22,9 @@ function RoutePath() {
       <Route element={<AuthLayout />}>
         <Route path={UI_ROUTES.login} element={<Login />} />
         <Route path={UI_ROUTES.register} element={<Register />} />
+      </Route>
+      <Route element={<AdminLayout />}>
+        <Route path={UI_ROUTES.admin.home} element={<AdminHome />} />
       </Route>
       <Route element={<HomePageLayout />}>
         <Route path={UI_ROUTES.home} element={<Home />} />

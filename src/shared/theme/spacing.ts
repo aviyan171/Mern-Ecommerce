@@ -3,7 +3,8 @@ import { MAX_WIDTH } from '../constants/index';
 type Spacing = {
   [key: number]: string | number;
 };
-const { NAVBAR_INNER_WIDTH } = MAX_WIDTH;
+const { NAVBAR_INNER_WIDTH, DRAWER_WIDTH, COLLAPSIBLE_DRAWER_WIDTH } =
+  MAX_WIDTH;
 export const generateSpacing = (requiredSpacing = 100) => {
   const baseMultiplier = 4;
   const spacing: Spacing = {};
@@ -18,4 +19,6 @@ export const generateSpacing = (requiredSpacing = 100) => {
 export const spacing = {
   ...generateSpacing(),
   NAVBAR_INNER_WIDTH,
+  DRAWER_WIDTH,
+  COLLAPSIBLE_DRAWER_WIDTH,
 };
