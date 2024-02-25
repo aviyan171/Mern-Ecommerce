@@ -1,5 +1,7 @@
 export const MAX_WIDTH = {
   NAVBAR_INNER_WIDTH: '1170px',
+  DRAWER_WIDTH: '280px',
+  COLLAPSIBLE_DRAWER_WIDTH: '75px',
 };
 
 export const UI_ROUTES = {
@@ -13,6 +15,9 @@ export const UI_ROUTES = {
   cart: '/store/cart',
   productDetails: '/store/product-details',
   checkout: '/store/checkout',
+  admin: {
+    home: '/admin/home',
+  },
 };
 
 export const PAGES = [
@@ -24,14 +29,6 @@ export const PAGES = [
     name: 'Shop',
     to: UI_ROUTES.category,
   },
-  // {
-  //   name: 'Pages',
-  //   to: UI_ROUTES.pages,
-  // },
-  // {
-  //   name: 'Blog',
-  //   to: UI_ROUTES.blog,
-  // },
   {
     name: 'Contacts',
     to: UI_ROUTES.contacts,
