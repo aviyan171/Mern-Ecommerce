@@ -3,15 +3,15 @@
 @tailwind utilities;
 
 @layer base {
-    html {
-      font-family: "Poppins", system-ui, sans-serif;
-    }
+  html {
+    font-family: 'Poppins', system-ui, sans-serif;
   }
-  @layer components {
-    .button-custom{
-      @apply text-white bg-black py-3 px-8
-    }
-    .button-bg-white{
-      @apply bg-white text-black py-3 px-8
-    }
+}
+@layer components {
+  .button-custom {
+    @apply text-white bg-black py-3 px-8;
   }
+  .button-bg-white {
+    @apply bg-white text-black py-3 px-8;
+  }
+}

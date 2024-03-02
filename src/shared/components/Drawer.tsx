@@ -4,11 +4,11 @@ import { BsList } from 'react-icons/bs';
 const Drawer = ({
   children,
   collapsible = false,
-  handleCollapsile,
+  handleCollapsible,
 }: {
   children: React.ReactNode;
   collapsible?: boolean;
-  handleCollapsile?: VoidFunction;
+  handleCollapsible?: VoidFunction;
 }) => {
   return (
     <div className="relative">
@@ -19,7 +19,7 @@ const Drawer = ({
       >
         <div
           className="bg-black h-[40px] w-[40px] absolute rounded-full right-[-16px] top-2 cursor-pointer "
-          onClick={handleCollapsile}
+          onClick={handleCollapsible}
         >
           <div className="text-white relative left-[30%] top-[30%] hover:rotate-6 ">
             <BsList />
