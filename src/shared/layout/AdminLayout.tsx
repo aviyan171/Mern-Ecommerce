@@ -1,4 +1,4 @@
-import AdminNavbar from 'features/admin/shared/components/AdminNavbar';
+import AdminNavbar from 'features/admin/navbar/components/AdminNavbar';
 import { useState } from 'react';
 import { Outlet } from 'react-router-dom';
 import Drawer from 'shared/components/Drawer';
@@ -29,6 +29,8 @@ export const AdminLayout = () => {
             collapsibleWidth={calculateCollapsible()}
             key={calculateCollapsible()}
           />
+        </div>
+        <div className="px-4">
           <Outlet />
         </div>
       </div>

@@ -1,13 +1,14 @@
-import { BsPeopleFill, BsSearch, BsSunrise } from 'react-icons/bs';
+import { BsPeopleFill, BsSunrise } from 'react-icons/bs';
 import Avatar from 'shared/components/Avatar';
+import Popover from 'shared/components/Popover';
 import Tooltip from 'shared/components/Tooltip';
+import AdminAccountContent from './AdminAccountContent';
 
 function AdminNavbar({ collapsibleWidth }: { collapsibleWidth: string }) {
   return (
     <div className={collapsibleWidth}>
-      <div className="p-4 text-right">
-        <div className="flex  justify-between items-center">
-          <BsSearch />
+      <div className="p-4">
+        <div className="flex  justify-end items-center">
           <div className="flex gap-4 items-center">
             <Tooltip title="Contacts">
               <div className="cursor-pointer">
@@ -19,7 +20,9 @@ function AdminNavbar({ collapsibleWidth }: { collapsibleWidth: string }) {
                 <BsSunrise />
               </div>
             </Tooltip>
-            <Avatar name="A" />
+            <Popover triggerElement={<Avatar name="A" />}>
+              <AdminAccountContent />
+            </Popover>
           </div>
         </div>
       </div>

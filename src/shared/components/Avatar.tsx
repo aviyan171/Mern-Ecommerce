@@ -7,10 +7,10 @@ function Avatar({
 }) {
   return (
     <div
-      className="text-white bg-black rounded-full p-2 h-8 w-8 cursor-pointer"
+      className="text-white bg-black rounded-full p-2 h-8 w-8 cursor-pointer relative"
       onClick={onClick}
     >
-      <p className="mr-[2px] mt-[-3px]">{name}</p>
+      <p className="absolute left-[32%] bottom-[10%]">{name}</p>
     </div>
   );
 }
