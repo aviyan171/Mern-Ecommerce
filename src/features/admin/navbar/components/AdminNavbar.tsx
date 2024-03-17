@@ -6,7 +6,7 @@ import AdminAccountContent from './AdminAccountContent';
 
 function AdminNavbar({ collapsibleWidth }: { collapsibleWidth: string }) {
   return (
-    <div className={collapsibleWidth}>
+    <div className={`${collapsibleWidth} bg-white`}>
       <div className="p-4">
         <div className="flex  justify-end items-center">
           <div className="flex gap-4 items-center">
