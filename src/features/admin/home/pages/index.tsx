@@ -1,5 +1,7 @@
+import { GenderRatio } from '../components/GenderRatio.tsx';
 import SiteOverallPerformance from '../components/SiteOverallPerformance';
 import SitePerformanceCard from '../components/SitePerformanceCard.tsx';
+import { TotalSales } from '../components/TotalSales.tsx';
 
 const Admin = () => {
   return (
@@ -11,6 +13,14 @@ const Admin = () => {
         {Array.from([1, 2, 3, 4], (_, index) => index).map((i) => (
           <SitePerformanceCard key={i} />
         ))}
+      </div>
+      <div className="flex mt-4 gap-3">
+        <div className="flex-[2]">
+          <TotalSales />
+        </div>
+        <div className="flex-1 ">
+          <GenderRatio />
+        </div>
       </div>
     </div>
   );

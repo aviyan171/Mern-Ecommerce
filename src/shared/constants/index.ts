@@ -1,3 +1,15 @@
+import {
+  ArcElement,
+  BarElement,
+  CategoryScale,
+  Chart as ChartJS,
+  ChartOptions,
+  Legend,
+  LinearScale,
+  Title,
+  Tooltip,
+} from 'chart.js';
+
 export const MAX_WIDTH = {
   NAVBAR_INNER_WIDTH: '1170px',
   DRAWER_WIDTH: '280px',
@@ -36,3 +48,119 @@ export const PAGES = [
 ];
 
 export const sizes = ['XXL', 'XL', 'L', 'S'];
+
+export const months = [
+  'Jan',
+  'Feb',
+  'March',
+  'Apr',
+  'May',
+  'June',
+  'July',
+  'Aug',
+  'Sept',
+  'Oct',
+  'Nov',
+  'Dec',
+];
+
+ChartJS.register(
+  CategoryScale,
+  LinearScale,
+  BarElement,
+  Title,
+  Tooltip,
+  Legend,
+  ArcElement
+);
+
+export const BarChartOptions: ChartOptions<'bar'> = {
+  responsive: true,
+  maintainAspectRatio: true,
+  datasets: {
+    bar: {
+      backgroundColor: '#3182CE', // Adjust the bar color here
+      grouped: true,
+    },
+  },
+
+  plugins: {
+    legend: {
+      display: false,
+    },
+    title: {
+      display: true,
+      text: 'Monthly Sales',
+      font: {
+        size: 16,
+        weight: 'bold',
+      },
+      padding: {
+        bottom: 10,
+      },
+    },
+    tooltip: {
+      padding: 10,
+      cornerRadius: 6,
+      backgroundColor: 'rgba(0, 0, 0, 0.8)',
+      titleFont: {
+        size: 14,
+        weight: 'bold',
+      },
+      bodyFont: {
+        size: 12,
+      },
+    },
+  },
+  scales: {
+    y: {
+      beginAtZero: true,
+      grid: {
+        display: false,
+      },
+      ticks: {
+        font: {
+          size: 12,
+        },
+      },
+    },
+    x: {
+      grid: {
+        display: false,
+      },
+      ticks: {
+        maxRotation: 0,
+        minRotation: 0,
+        font: {
+          size: 12,
+        },
+      },
+    },
+  },
+};
+
+export const doughnutChartOptions: ChartOptions<'doughnut'> = {
+  responsive: true,
+
+  maintainAspectRatio: true,
+  plugins: {
+    legend: {
+      display: false,
+    },
+    title: {
+      display: false,
+    },
+    tooltip: {
+      padding: 10,
+      cornerRadius: 6,
+      backgroundColor: 'rgba(0, 0, 0, 0.8)',
+      titleFont: {
+        size: 14,
+        weight: 'bold',
+      },
+      bodyFont: {
+        size: 12,
+      },
+    },
+  },
+};
