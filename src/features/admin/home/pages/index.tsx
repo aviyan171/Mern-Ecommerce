@@ -1,4 +1,6 @@
 import { GenderRatio } from '../components/GenderRatio.tsx';
+import { LatestOrders } from '../components/LatestOrders.tsx';
+import { LatestProduct } from '../components/LatestProduct.tsx';
 import SiteOverallPerformance from '../components/SiteOverallPerformance';
 import SitePerformanceCard from '../components/SitePerformanceCard.tsx';
 import { TotalSales } from '../components/TotalSales.tsx';
@@ -20,6 +22,14 @@ const Admin = () => {
         </div>
         <div className="flex-1 ">
           <GenderRatio />
+        </div>
+      </div>
+      <div className="flex gap-3 mt-4 mb-4">
+        <div className="flex-[1]">
+          <LatestProduct />
+        </div>
+        <div className="flex-[2]">
+          <LatestOrders />
         </div>
       </div>
     </div>
