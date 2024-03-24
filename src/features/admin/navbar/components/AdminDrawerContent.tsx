@@ -21,9 +21,7 @@ export function AdminDrawerContent({ onlyLogo }: { onlyLogo: boolean }) {
               key={i.name}
               className={`flex items-center ${
                 !onlyLogo ? 'justify-center ' : 'justify-start'
-              }cursor-pointer mt-2 gap-2  ${
-                onlyLogo ? 'pl-3' : 'pl-0'
-              } hover:bg-slate-200 ${
+              } mt-2 gap-2  ${onlyLogo ? 'pl-3' : 'pl-0'} hover:bg-slate-200 ${
                 isSameRoute(i.link) ? 'bg-slate-200' : ''
               }`}
             >

@@ -29,6 +29,7 @@ export const UI_ROUTES = {
   checkout: '/store/checkout',
   admin: {
     home: '/admin/home',
+    addProduct: '/admin/add-product',
   },
 };
 
@@ -171,8 +172,9 @@ export const adminRoutes = [
     img: 'https://png.pngtree.com/png-vector/20230302/ourmid/pngtree-dashboard-line-icon-vector-png-image_6626604.png',
     link: UI_ROUTES.admin.home,
   },
-  // {
-  //   name:'Add Products',
-  //   img:''
-  // }
+  {
+    name: 'Add Products',
+    img: 'https://www.rawshorts.com/freeicons/wp-content/uploads/2017/01/shop-pict-basket_add.png',
+    link: UI_ROUTES.admin.addProduct,
+  },
 ];
