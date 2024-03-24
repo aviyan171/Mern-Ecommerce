@@ -15,6 +15,11 @@ const ProductDetails = lazy(() => import('features/product-details/pages'));
 const Checkout = lazy(() => import('features/checkout/pages'));
 const Contact = lazy(() => import('features/contact/pages'));
 const AdminHome = lazy(() => import('features/admin/home/pages'));
+const AddProduct = lazy(() =>
+  import('features/admin/add-product/pages/index').then((module) => ({
+    default: module.AddProduct,
+  }))
+);
 
 function RoutePath() {
   return (
@@ -25,6 +30,7 @@ function RoutePath() {
       </Route>
       <Route element={<AdminLayout />}>
         <Route path={UI_ROUTES.admin.home} element={<AdminHome />} />
+        <Route path={UI_ROUTES.admin.addProduct} element={<AddProduct />} />
       </Route>
       <Route element={<HomePageLayout />}>
         <Route path={UI_ROUTES.home} element={<Home />} />
