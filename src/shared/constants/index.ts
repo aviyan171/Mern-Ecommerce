@@ -164,3 +164,15 @@ export const doughnutChartOptions: ChartOptions<'doughnut'> = {
     },
   },
 };
+
+export const adminRoutes = [
+  {
+    name: 'Dashboard',
+    img: 'https://png.pngtree.com/png-vector/20230302/ourmid/pngtree-dashboard-line-icon-vector-png-image_6626604.png',
+    link: UI_ROUTES.admin.home,
+  },
+  // {
+  //   name:'Add Products',
+  //   img:''
+  // }
+];

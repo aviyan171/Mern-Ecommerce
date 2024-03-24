@@ -1,10 +1,11 @@
+import { AdminDrawerContent } from 'features/admin/navbar/components/AdminDrawerContent';
 import AdminNavbar from 'features/admin/navbar/components/AdminNavbar';
 import { useState } from 'react';
 import { Outlet } from 'react-router-dom';
 import Drawer from 'shared/components/Drawer';
 
 export const AdminLayout = () => {
-  const [collapsible, setCollapsible] = useState(false);
+  const [collapsible, setCollapsible] = useState(true);
 
   const calculateCollapsible = () => {
     return collapsible
@@ -12,12 +13,12 @@ export const AdminLayout = () => {
       : `fixed w-[calc(100%-280px-28px)] top-0`;
   };
   return (
-    <div className="">
+    <div>
       <Drawer
         collapsible={collapsible}
         handleCollapsible={() => setCollapsible(!collapsible)}
       >
-        hi
+        <AdminDrawerContent onlyLogo={!collapsible} />
       </Drawer>
       <div
         className={` ${
