@@ -30,6 +30,7 @@ export const UI_ROUTES = {
   admin: {
     home: '/admin/home',
     addProduct: '/admin/add-product',
+    productTable: '/admin/product-table',
   },
 };
 
@@ -176,5 +177,10 @@ export const adminRoutes = [
     name: 'Add Products',
     img: 'https://www.rawshorts.com/freeicons/wp-content/uploads/2017/01/shop-pict-basket_add.png',
     link: UI_ROUTES.admin.addProduct,
+  },
+  {
+    name: 'Products',
+    img: 'https://cdn-icons-png.freepik.com/256/2652/2652218.png',
+    link: UI_ROUTES.admin.productTable,
   },
 ];

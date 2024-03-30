@@ -1,3 +1,5 @@
+import { ProductStatus } from 'features/admin/product-table/enum';
+
 export function StatusChip({ status }: { status: string }) {
   const statusColor = () => {
     switch (status) {
@@ -5,6 +7,10 @@ export function StatusChip({ status }: { status: string }) {
         return 'bg-orange-400';
       case 'Delivered':
         return 'bg-green-400';
+      case ProductStatus.PUBLISHED:
+        return 'bg-green-400';
+      case ProductStatus.DRAFT:
+        return 'bg-blue-400';
       case 'Refunded':
         return 'bg-red-400';
       default:
