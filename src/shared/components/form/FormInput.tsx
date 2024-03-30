@@ -25,7 +25,6 @@ function FormInput({
         <input
           {...props}
           {...register(name)}
-          type="text"
           className="h-[50px] border-[1px] text-sm border-slate-300  focus:outline-none pl-5 text-slate-400 w-full bg-transparent"
         />
       ) : (
