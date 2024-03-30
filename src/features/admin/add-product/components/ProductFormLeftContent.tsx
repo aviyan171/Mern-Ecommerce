@@ -21,6 +21,10 @@ export function ProductFormLeftContent() {
       label: 'Computer',
       value: 'computer',
     },
+    {
+      label: 'Mouse',
+      value: 'mouse',
+    },
   ];
   return (
     <div className="sticky top-0">

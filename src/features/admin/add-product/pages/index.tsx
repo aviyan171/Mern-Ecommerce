@@ -6,6 +6,9 @@ const defaultValues = {
   productImage: '',
   status: '',
   category: '',
+  stock: '',
+  price: '',
+  discountedPrice: '',
 };
 export function AddProduct() {
   const methods = useForm({
