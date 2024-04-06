@@ -3,102 +3,127 @@ import {
   getCoreRowModel,
   useReactTable,
 } from '@tanstack/react-table';
+import Button from 'shared/components/Button';
 import { StatusChip } from 'shared/components/StatusChip';
 
 interface Order {
-  order: string;
   customer: string;
   date: string;
   status: string;
+  total: string;
+  action?: VoidFunction;
+  orderId: string;
 }
 
 const orders: Order[] = [
   {
-    order: 'The Sliding Mr. Bones (Next Stop, Pottersville)',
+    orderId: '1',
     customer: 'Malcolm Lockyer',
     date: '1961',
+    total: '1212121212',
     status: 'Delivered',
   },
   {
-    order: 'Witchy Woman',
+    orderId: '2',
     customer: 'The Eagles',
     date: '1972',
+    total: '1212121212',
     status: 'Pending',
   },
   {
-    order: 'Shining Star',
+    orderId: '3',
     customer: 'Earth, Wind, and Fire',
     date: '1975',
+    total: '1212121212',
     status: 'Refunded',
   },
   {
-    order: 'Hotel California',
+    orderId: '4',
     customer: 'The Eagles',
     date: '1976',
+    total: '1212121212',
     status: 'Delivered',
   },
   {
-    order: 'Bohemian Rhapsody',
+    orderId: '5',
     customer: 'Queen',
     date: '1975',
+    total: '1212121212',
     status: 'Pending',
   },
   {
-    order: 'Stairway to Heaven',
+    orderId: '6',
     customer: 'Led Zeppelin',
     date: '1971',
+    total: '1212121212',
     status: 'Shipped',
   },
   {
-    order: 'Imagine',
+    orderId: '7',
     customer: 'John Lennon',
     date: '1971',
+    total: '1212121212',
     status: 'Delivered',
   },
   {
-    order: 'Born to Run',
+    orderId: '8',
     customer: 'Bruce Springsteen',
     date: '1975',
+    total: '1212121212',
     status: 'Shipped',
   },
   {
-    order: 'I Will Always Love You',
+    orderId: '9',
     customer: 'Whitney Houston',
     date: '1992',
+    total: '1212121212',
     status: 'Delivered',
   },
   {
-    order: 'Smells Like Teen Spirit',
+    orderId: '10',
     customer: 'Nirvana',
     date: '1991',
+    total: '1212121212',
     status: 'Pending',
   },
 ];
 
-export const useOrderTable = () => {
+export const useOrderTable = ({
+  showAllOrders,
+}: {
+  showAllOrders: boolean;
+}) => {
+  const filteredOrders = showAllOrders ? orders : orders.slice(0, 5);
+
   const columnHelper = createColumnHelper<Order>();
 
   const columns = [
-    columnHelper.accessor('order', {
-      cell: (props) => props.getValue(),
-      header: 'Orders',
-    }),
     columnHelper.accessor('customer', {
       cell: (props) => props.getValue(),
       header: 'Customer',
     }),
+    columnHelper.accessor('total', {
+      cell: (props) => props.getValue(),
+      header: 'Total',
+    }),
     columnHelper.accessor('date', {
       cell: (props) => props.getValue(),
-      header: 'Date',
+      header: 'Orderd Date',
     }),
     columnHelper.accessor('status', {
       cell: (props) => <StatusChip status={props.getValue()} />,
       header: 'Status',
     }),
+    columnHelper.accessor('action', {
+      cell: (p) => (
+        <Button text="Manage" onClick={() => alert(p.row.original.orderId)} />
+      ),
+      header: 'Action',
+    }),
   ];
 
   const table = useReactTable({
-    data: orders,
+    data: filteredOrders,
     columns,
     getCoreRowModel: getCoreRowModel(),
     columnResizeMode: 'onChange',

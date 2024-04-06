@@ -29,7 +29,7 @@ const Admin = () => {
           <LatestProduct />
         </div>
         <div className="flex-[2]">
-          <LatestOrders />
+          <LatestOrders showAllOrders={false} />
         </div>
       </div>
     </div>

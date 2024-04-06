@@ -31,6 +31,7 @@ export const UI_ROUTES = {
     home: '/admin/home',
     addProduct: '/admin/add-product',
     productTable: '/admin/product-table',
+    orderTable: '/admin/order-table',
   },
 };
 
@@ -178,5 +179,10 @@ export const adminRoutes = [
     name: 'Products',
     img: 'https://cdn-icons-png.freepik.com/256/2652/2652218.png',
     link: UI_ROUTES.admin.productTable,
+  },
+  {
+    name: 'Orders',
+    img: 'https://icons.veryicon.com/png/o/miscellaneous/icondian/icon-order-1.png',
+    link: UI_ROUTES.admin.orderTable,
   },
 ];
