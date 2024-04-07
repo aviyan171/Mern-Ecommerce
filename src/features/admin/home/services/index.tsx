@@ -3,8 +3,10 @@ import {
   getCoreRowModel,
   useReactTable,
 } from '@tanstack/react-table';
+import { useNavigate } from 'react-router-dom';
 import Button from 'shared/components/Button';
 import { StatusChip } from 'shared/components/StatusChip';
+import { UI_ROUTES } from 'shared/constants';
 
 interface Order {
   customer: string;
@@ -97,6 +99,8 @@ export const useOrderTable = ({
 
   const columnHelper = createColumnHelper<Order>();
 
+  const navigate = useNavigate();
+
   const columns = [
     columnHelper.accessor('customer', {
       cell: (props) => props.getValue(),
@@ -116,7 +120,14 @@ export const useOrderTable = ({
     }),
     columnHelper.accessor('action', {
       cell: (p) => (
-        <Button text="Manage" onClick={() => alert(p.row.original.orderId)} />
+        <Button
+          text="Manage"
+          onClick={() =>
+            navigate(
+              `${UI_ROUTES.admin.orderDetails}/?transactionId=${p.row.original.orderId}`
+            )
+          }
+        />
       ),
       header: 'Action',
     }),
