@@ -32,6 +32,7 @@ export const UI_ROUTES = {
     addProduct: '/admin/add-product',
     productTable: '/admin/product-table',
     orderTable: '/admin/order-table',
+    orderDetails: '/admin/order-details',
   },
 };
 
