@@ -5,10 +5,10 @@ import SignUpBar from '../features/navbar/components/SignUpBar';
 
 function HomePageLayout() {
   return (
-    <div className="m-0 p-0 min-h-[100vh] flex flex-col">
+    <div className="m-0 p-0 min-h-screen flex flex-col">
       <SignUpBar />
       <Navbar />
-      <div className="flex-1">
+      <div className="flex-1 ">
         <Outlet />
       </div>
       <Footer />
