@@ -2,7 +2,6 @@ import CustomerInfo from 'shared/components/CustomerInfo'
 import Divider from 'shared/components/Divider'
 
 const AdminAccountContent = () => {
-  console.log('hi')
   return (
     <div className="p-3 ">
       <CustomerInfo
