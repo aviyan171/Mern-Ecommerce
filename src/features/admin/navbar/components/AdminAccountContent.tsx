@@ -1,7 +1,8 @@
-import CustomerInfo from 'shared/components/CustomerInfo';
-import Divider from 'shared/components/Divider';
+import CustomerInfo from 'shared/components/CustomerInfo'
+import Divider from 'shared/components/Divider'
 
 const AdminAccountContent = () => {
+  console.log('hi')
   return (
     <div className="p-3 ">
       <CustomerInfo
@@ -16,7 +17,7 @@ const AdminAccountContent = () => {
         Sign Out
       </p>
     </div>
-  );
-};
+  )
+}
 
-export default AdminAccountContent;
+export default AdminAccountContent
