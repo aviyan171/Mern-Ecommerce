@@ -1,4 +1,4 @@
-import { ROLE } from '../enum/login-enum'
+import { Gender, ROLE } from '../enum/login-enum'
 
 export interface IRegisterForm {
   firstName: string
@@ -24,9 +24,4 @@ export type UserRequestBody = {
   _id: string
   dob: Date
   role: ROLE
-}
-
-export enum Gender {
-  MALE = 'male',
-  FEMALE = 'female'
 }

@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom'
 import { UI_ROUTES } from 'shared/constants'
 import { toast } from 'react-toastify'
 import { Login_MESSAGES } from '../constants'
-import { Gender } from '../interface'
+import { Gender } from '../enum/login-enum'
 
 export const useLoginWithGoogleMutation = () => {
   const navigate = useNavigate()

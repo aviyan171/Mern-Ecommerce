@@ -2,9 +2,9 @@ import { signInWithPopup, GoogleAuthProvider } from 'firebase/auth'
 import { firebaseAuth } from '../firebase/firebase'
 import { axios } from 'axios/axiosInstance'
 import { API_CONSTANTS } from '../constants'
-import { Gender, UserRequestBody } from '../interface'
+import { UserRequestBody } from '../interface'
 import { Response } from 'shared/types/shared-types'
-import { ROLE } from '../enum/login-enum'
+import { Gender, ROLE } from '../enum/login-enum'
 
 export const handleLogin = async (data: UserRequestBody): Promise<Response<any>> => {
   try {

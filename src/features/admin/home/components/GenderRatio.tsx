@@ -1,15 +1,10 @@
-import { DoughnutChart } from 'shared/components/DoughnutChart';
+import { DoughnutChart } from 'shared/components/DoughnutChart'
 
 export function GenderRatio() {
   return (
     <div className="bg-white rounded-lg shadow-lg px-6 pt-6 pb-4">
       <p className="font-bold text-xl mb-4">Gender Ratio</p>
-      <DoughnutChart
-        colorArray={['pink', 'blue', 'red']}
-        data={[55, 50, 5]}
-        label="Gender Ratio"
-        labels={['Female', 'Male', 'Others']}
-      />
+      <DoughnutChart colorArray={['pink', 'blue', 'red']} data={[55, 50, 5]} label="Gender Ratio" labels={['Female', 'Male', 'Others']} />
       <div className="flex mt-4 justify-center gap-4">
         <div>
           <p>Male</p>
@@ -25,5 +20,5 @@ export function GenderRatio() {
         </div>
       </div>
     </div>
-  );
+  )
 }

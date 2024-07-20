@@ -1,4 +1,5 @@
-import { Gender, ILoginForm, IRegisterForm } from '../interface'
+import { Gender } from '../enum/login-enum'
+import { ILoginForm, IRegisterForm } from '../interface'
 
 export const registerDefaultValues: IRegisterForm = {
   city: '',
