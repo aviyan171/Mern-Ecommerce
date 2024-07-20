@@ -1,8 +1,7 @@
 import { loginDefaultValues } from 'features/auth/login/constants'
 import { FormProvider, useForm } from 'react-hook-form'
-import { useNavigate } from 'react-router-dom'
-import { UI_ROUTES } from 'shared/constants'
 import { LoginForm } from '../components/LoginForm'
+import { useLoginWithGoogleMutation } from '../service/authService'
 
 const defaultValues = loginDefaultValues
 
@@ -10,11 +9,10 @@ function Login() {
   const methods = useForm({
     defaultValues
   })
-
-  const navigate = useNavigate()
+  const googleLoginMutation = useLoginWithGoogleMutation()
 
   const handleSubmit = (data: typeof defaultValues) => {
-    navigate(UI_ROUTES.home)
+    googleLoginMutation.mutate({ dob: data.dob, gender: data.gender })
   }
   return (
     <FormProvider {...methods}>

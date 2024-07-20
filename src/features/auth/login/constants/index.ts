@@ -1,4 +1,4 @@
-import { ILoginForm, IRegisterForm } from '../interface'
+import { Gender, ILoginForm, IRegisterForm } from '../interface'
 
 export const registerDefaultValues: IRegisterForm = {
   city: '',
@@ -12,8 +12,8 @@ export const registerDefaultValues: IRegisterForm = {
 }
 
 export const loginDefaultValues: ILoginForm = {
-  email: '',
-  password: ''
+  gender: Gender.FEMALE,
+  dob: new Date()
 }
 
 export const Login_MESSAGES = {
@@ -24,3 +24,14 @@ export const Login_MESSAGES = {
 export const API_CONSTANTS = {
   create: '/user/new'
 }
+
+export const GENDER_SELECT = [
+  {
+    label: 'Male',
+    value: Gender.MALE
+  },
+  {
+    label: 'Female',
+    value: Gender.FEMALE
+  }
+]

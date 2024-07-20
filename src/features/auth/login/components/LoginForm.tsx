@@ -2,24 +2,18 @@ import { BsGoogle } from 'react-icons/bs'
 import Divider from 'shared/components/Divider'
 import LoginFields from './LoginFields'
 import SocialAccountLoginButton from './SocialAccoutLoginButton'
-import { useLoginWithGoogleMutation } from 'features/auth/login/service/authService'
 
 export const LoginForm = () => {
-  const googleLoginMutation = useLoginWithGoogleMutation()
-
-  const onGoogleLogin = () => {
-    googleLoginMutation.mutate()
-  }
-
   return (
     <div>
       <div className="flex flex-col gap-2  ">
-        {/* <SocialAccoutLoginButton icon={<BsFacebook />} text="facebook" /> */}
-        <SocialAccountLoginButton icon={<BsGoogle />} text="google" onClick={onGoogleLogin} />
-        {/* <SocialAccoutLoginButton icon={<BsApple />} text="apple" /> */}
+        <p className="font-normal text-sm">If you have already logged in ? </p>
+        <SocialAccountLoginButton icon={<BsGoogle />} text="google" type="submit" />
         <div className="py-4">
           <Divider />
         </div>
+        <p className="font-normal text-sm">New here ? </p>
+        <p className="font-normal text-sm">Please select the credential and continue with google </p>
         <LoginFields />
       </div>
     </div>

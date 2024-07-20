@@ -12,8 +12,8 @@ export interface IRegisterForm {
 }
 
 export interface ILoginForm {
-  email: string
-  password: string
+  gender: Gender
+  dob: Date
 }
 
 export type UserRequestBody = {
@@ -22,7 +22,7 @@ export type UserRequestBody = {
   photo: string
   gender: Gender
   _id: string
-  dob: string
+  dob: Date
   role: ROLE
 }
 
