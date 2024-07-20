@@ -19,7 +19,7 @@ export const handleLogin = async (data: UserRequestBody): Promise<Response<any>>
   }
 }
 
-export const handleGoogleSignIn = async () => {
+export const handleGoogleSignIn = async ({ dob, gender }: { dob: Date; gender: Gender }) => {
   const provider = new GoogleAuthProvider()
   try {
     const result = await signInWithPopup(firebaseAuth, provider)
@@ -28,9 +28,9 @@ export const handleGoogleSignIn = async () => {
       await handleLogin({
         name: user.displayName!,
         _id: user.uid,
-        gender: Gender.MALE,
+        gender,
         role: ROLE.USER,
-        dob: '2001/01/11',
+        dob,
         email: user.email!,
         photo: user.photoURL!
       })

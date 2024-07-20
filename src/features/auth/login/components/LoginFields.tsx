@@ -1,21 +1,33 @@
-import { useNavigate } from 'react-router-dom'
-import Button from 'shared/components/Button'
-import FormInput from 'shared/components/form/FormInput'
-import { UI_ROUTES } from 'shared/constants'
+import { GENDER_SELECT } from '../constants'
+import FormSelect from 'shared/components/form/FormSelect'
+
+import { FormDatePicker } from 'shared/components/form/FormDatePicker'
 
 function LoginFields() {
-  const navigate = useNavigate()
-
   return (
     <div>
-      <FormInput label="Email" isRequired name="email" />
+      <p className="mb-3">Date of birth</p>
+      <FormDatePicker name="dob" />
       <div className="mt-2">
-        <FormInput label="Password" isRequired name="password" />
+        <p className="mb-3">Gender</p>
+        <FormSelect name="gender" data={GENDER_SELECT} />
       </div>
+    </div>
+  )
+}
+
+export default LoginFields
+
+{
+  /* 
+I   Since only google auth is available commenting this for now
+
       <div className="mt-3">
         <Button type="submit" fullWidth text="Sign In" />
-      </div>
-      <div className="mt-3 ">
+      </div> */
+}
+{
+  /* <div className="mt-3 ">
         <p className="font-bold cursor-pointer">Forgot password ?</p>
       </div>
       <div className="mt-3 ">
@@ -27,8 +39,5 @@ function LoginFields() {
           </span>
         </p>
       </div>
-    </div>
-  )
+       */
 }
-
-export default LoginFields
