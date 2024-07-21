@@ -12,7 +12,7 @@ function Login() {
   const googleLoginMutation = useLoginWithGoogleMutation()
 
   const handleSubmit = (data: typeof defaultValues) => {
-    googleLoginMutation.mutate({ dob: data.dob, gender: data.gender })
+    googleLoginMutation.mutate({ dob: data.dob!, gender: data.gender! })
   }
   return (
     <FormProvider {...methods}>

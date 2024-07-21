@@ -1,18 +1,24 @@
-import { Outlet, useLocation } from 'react-router-dom';
-import { UI_ROUTES } from 'shared/constants';
-import backGroundImage from '../assets/jpg/LoginBackground.jpg';
+import { Navigate, Outlet, useLocation } from 'react-router-dom'
+import { UI_ROUTES } from 'shared/constants'
+import backGroundImage from '../assets/jpg/LoginBackground.jpg'
+import { useAppSelector } from 'shared/store/hooks'
+import { isLoggedIn } from 'features/auth/login/auth-store/user-slice'
 
 interface IProps {
-  [key: string]: string;
+  [key: string]: string
 }
 function AuthLayout() {
-  const location = useLocation();
-  const path = location.pathname;
+  const location = useLocation()
+  const path = location.pathname
+
+  const isAuthenticated = useAppSelector(isLoggedIn)
+
+  if (isAuthenticated) return <Navigate to={UI_ROUTES.home} />
 
   const message: IProps = {
     [UI_ROUTES.login]: 'Sign in to continue to your account',
-    [UI_ROUTES.register]: 'Register your account',
-  };
+    [UI_ROUTES.register]: 'Register your account'
+  }
 
   return (
     <div className="relative min-h-[100vh]  ">
@@ -27,9 +33,7 @@ function AuthLayout() {
             <div className="flex h-full">
               <div className="flex-[3] bg-black text-white ">
                 <div className="flex flex-col justify-center  px-4  h-full gap-5">
-                  <p className="text-xl font-bold ">
-                    Welcome Back to Abhiyan Store
-                  </p>
+                  <p className="text-xl font-bold ">Welcome Back to Abhiyan Store</p>
                   <p className="text-sm ">{message[path]}</p>
                 </div>
               </div>
@@ -41,7 +45,7 @@ function AuthLayout() {
         </div>
       </div>
     </div>
-  );
+  )
 }
 
-export default AuthLayout;
+export default AuthLayout

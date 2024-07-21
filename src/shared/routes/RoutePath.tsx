@@ -1,28 +1,28 @@
-import Login from 'features/auth/login/pages';
-import Register from 'features/auth/register/page';
-import Category from 'features/category/pages';
-import { lazy } from 'react';
-import { Route } from 'react-router-dom';
-import { UI_ROUTES } from 'shared/constants';
-import { AdminLayout } from 'shared/layout/AdminLayout';
-import AuthLayout from 'shared/layout/AuthLayout';
-import Router from '.';
+import Login from 'features/auth/login/pages'
+import Register from 'features/auth/register/page'
+import Category from 'features/category/pages'
+import { lazy } from 'react'
+import { Route } from 'react-router-dom'
+import { UI_ROUTES } from 'shared/constants'
+import { AdminLayout } from 'shared/layout/AdminLayout'
+import AuthLayout from 'shared/layout/AuthLayout'
+import Router from '.'
 
-const Home = lazy(() => import('features/home/pages'));
-const HomePageLayout = lazy(() => import('shared/layout/HomePageLayout'));
-const Cart = lazy(() => import('features/cart/pages'));
-const ProductDetails = lazy(() => import('features/product-details/pages'));
-const Checkout = lazy(() => import('features/checkout/pages'));
-const Contact = lazy(() => import('features/contact/pages'));
-const AdminHome = lazy(() => import('features/admin/home/pages'));
+const Home = lazy(() => import('features/home/pages'))
+const HomePageLayout = lazy(() => import('shared/layout/HomePageLayout'))
+const Cart = lazy(() => import('features/cart/pages'))
+const ProductDetails = lazy(() => import('features/product-details/pages'))
+const Checkout = lazy(() => import('features/checkout/pages'))
+const Contact = lazy(() => import('features/contact/pages'))
+const AdminHome = lazy(() => import('features/admin/home/pages'))
 const AddProduct = lazy(() =>
-  import('features/admin/add-product/pages/index').then((module) => ({
-    default: module.AddProduct,
+  import('features/admin/add-product/pages/index').then(module => ({
+    default: module.AddProduct
   }))
-);
-const ProductTable = lazy(() => import('features/admin/product-table/pages'));
-const OrderTable = lazy(() => import('features/admin/order-table/pages'));
-const OrderDetails = lazy(() => import('features/admin/order-details/pages'));
+)
+const ProductTable = lazy(() => import('features/admin/product-table/pages'))
+const OrderTable = lazy(() => import('features/admin/order-table/pages'))
+const OrderDetails = lazy(() => import('features/admin/order-details/pages'))
 
 function RoutePath() {
   return (
@@ -47,7 +47,7 @@ function RoutePath() {
         <Route path={UI_ROUTES.contacts} element={<Contact />} />
       </Route>
     </Router>
-  );
+  )
 }
 
-export default RoutePath;
+export default RoutePath

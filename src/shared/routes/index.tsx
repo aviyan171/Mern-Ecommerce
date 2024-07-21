@@ -1,12 +1,13 @@
-import { Suspense } from 'react';
-import { Routes } from 'react-router-dom';
+import { Suspense } from 'react'
+import { Routes } from 'react-router-dom'
+import { LoadingScreen } from 'shared/components/LoadingScreen'
 
 function Router({ children }: { children: React.ReactNode }) {
   return (
-    <Suspense fallback={<h1>loading...........</h1>}>
+    <Suspense fallback={<LoadingScreen />}>
       <Routes>{children}</Routes>
     </Suspense>
-  );
+  )
 }
 
-export default Router;
+export default Router
