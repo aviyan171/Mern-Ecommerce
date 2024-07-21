@@ -12,8 +12,8 @@ export interface IRegisterForm {
 }
 
 export interface ILoginForm {
-  gender: Gender
-  dob: Date
+  gender: Gender | null
+  dob: Date | null
 }
 
 export type UserRequestBody = {
@@ -25,3 +25,5 @@ export type UserRequestBody = {
   dob: Date
   role: ROLE
 }
+
+export type AuthUser = UserRequestBody

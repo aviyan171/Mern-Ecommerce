@@ -13,8 +13,8 @@ export const registerDefaultValues: IRegisterForm = {
 }
 
 export const loginDefaultValues: ILoginForm = {
-  gender: Gender.FEMALE,
-  dob: new Date()
+  gender: null,
+  dob: null
 }
 
 export const Login_MESSAGES = {
