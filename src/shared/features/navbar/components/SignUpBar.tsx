@@ -1,4 +1,5 @@
 import { Logout_MESSAGES } from 'features/auth/constants/user-constants'
+import { useCheckIsAdmin } from 'features/auth/hooks/useCheckIsAdmin'
 import { isLoggedIn, selectUser } from 'features/auth/login/auth-store/user-slice'
 import { firebaseAuth } from 'features/auth/login/firebase/firebase'
 import { signOut } from 'firebase/auth'
@@ -16,6 +17,7 @@ function SignUpBar() {
   const userName = useAppSelector(selectUser)?.name
   const isSignedIn = useAppSelector(isLoggedIn)
   const navigate = useNavigate()
+  const isAdmin = useCheckIsAdmin()
 
   const handleAuthentication = async () => {
     if (isSignedIn) {
@@ -68,7 +70,17 @@ function SignUpBar() {
         <MaxWidthLayout>
           <div className="flex justify-between">
             <div>Free shipping, 30-day return or refund guarantee.</div>
-            {!isSignedIn ? ButtonElement() : <Popup content={PopUpContent()} triggerElement={ButtonElement()} />}
+            <div className="flex justify-between gap-10">
+              {!isSignedIn ? ButtonElement() : <Popup content={PopUpContent()} triggerElement={ButtonElement()} />}
+              {isAdmin && (
+                <div className="cursor-pointer" onClick={() => navigate(UI_ROUTES.admin.home)}>
+                  <p>Go to admin portal</p>
+                </div>
+              )}
+            </div>
+            {/* <div>
+              <p>Go to Admin Portal</p>
+            </div> */}
           </div>
         </MaxWidthLayout>
       </div>

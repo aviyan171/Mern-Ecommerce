@@ -1,8 +1,11 @@
 import { AdminDrawerContent } from 'features/admin/navbar/components/AdminDrawerContent'
 import AdminNavbar from 'features/admin/navbar/components/AdminNavbar'
+import { useCheckIsAdmin } from 'features/auth/hooks/useCheckIsAdmin'
+
 import { useState } from 'react'
-import { Outlet } from 'react-router-dom'
+import { Navigate, Outlet } from 'react-router-dom'
 import Drawer from 'shared/components/Drawer'
+import { UI_ROUTES } from 'shared/constants'
 
 export const AdminLayout = () => {
   const [collapsible, setCollapsible] = useState(true)
@@ -10,6 +13,11 @@ export const AdminLayout = () => {
   const calculateCollapsible = () => {
     return collapsible ? `fixed w-[calc(100%-75px-28px)] top-0 z-[1] ` : `fixed w-[calc(100%-280px-28px)] top-0 z-[1]`
   }
+
+  const isAuthenticated = useCheckIsAdmin()
+
+  if (!isAuthenticated) return <Navigate to={UI_ROUTES.home} />
+
   return (
     <div>
       <Drawer collapsible={collapsible} handleCollapsible={() => setCollapsible(!collapsible)}>
