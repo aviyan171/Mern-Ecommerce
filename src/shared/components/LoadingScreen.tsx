@@ -1,10 +1,9 @@
-import { Loader as ReactLoader } from 'lucide-react'
+import { Circles } from 'react-loader-spinner'
 
 export function LoadingScreen() {
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center">
-      <ReactLoader size={100} />
-      <p className="mt-10 text-5xl text-center ml-20">Loading......</p>
+    <div className="absolute z-10 left-[50%] top-[50%]">
+      <Circles height="80" width="80" color="#4fa94d" ariaLabel="circles-loading" visible={true} />
     </div>
   )
 }
