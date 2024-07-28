@@ -14,9 +14,9 @@ export const AdminLayout = () => {
     return collapsible ? `fixed w-[calc(100%-75px-28px)] top-0 z-[1] ` : `fixed w-[calc(100%-280px-28px)] top-0 z-[1]`
   }
 
-  const isAuthenticated = useCheckIsAdmin()
+  const isAdmin = useCheckIsAdmin()
 
-  if (!isAuthenticated) return <Navigate to={UI_ROUTES.home} />
+  if (!isAdmin) return <Navigate to={UI_ROUTES.home} />
 
   return (
     <div>

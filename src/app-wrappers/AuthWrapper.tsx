@@ -16,6 +16,10 @@ type Props = {
 export function AuthWrapper({ children }: Props) {
   const dispatch = useAppDispatch()
 
+  /**
+   * This done so that if token if deleted window will refresh automatically
+   * to prevent some thing unauthorized
+   */
   useEffect(() => {
     const isIdExists = async (event: StorageEvent) => {
       if (event.key === 'userId') {
