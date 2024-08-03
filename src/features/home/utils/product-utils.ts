@@ -1,5 +1,4 @@
-import { Response } from 'shared/types/shared-types'
-import { AdaptedProduct, Product } from '../types/produt-type'
+import { AdaptedProduct, Product, Response } from 'shared/types/shared-types'
 
 export const adaptProductList = (data: Response<Product[]>): Response<AdaptedProduct[]> => {
   const { VITE_API_URL } = import.meta.env

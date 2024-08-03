@@ -12,9 +12,13 @@ export type ProductProps = {
 function ProductListItems({ image, name, price, productId }: ProductProps) {
   const navigate = useNavigate()
 
+  const handleOnClick = () => {
+    navigate(`${UI_ROUTES.productDetails}?id=${productId}`)
+  }
+
   return (
-    <div className="group cursor-pointer" onClick={() => navigate(UI_ROUTES.productDetails.replace(':id', productId))}>
-      <div className="h-[256px] bg-no-repeat bg-cover relative" style={{ backgroundImage: `url(${image})` }}>
+    <div className="group cursor-pointer" onClick={handleOnClick}>
+      <div className="h-[256px] bg-no-repeat bg-contain relative" style={{ backgroundImage: `url(${image})` }}>
         <div className="absolute px-4 py-1 bg-black  text-white text-xs top-5 left-0">SALE</div>
         <div
           className="absolute 

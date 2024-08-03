@@ -4,6 +4,7 @@ import { firebaseAuth } from 'features/auth/login/firebase/firebase'
 import { setAuthState } from 'features/auth/utils/auth-utils'
 import { onAuthStateChanged, signOut } from 'firebase/auth'
 import { useEffect } from 'react'
+import { useLocation } from 'react-router-dom'
 import { LoaderWithBgBlur } from 'shared/components/LoaderWithBgBlur'
 
 import { useAppDispatch } from 'shared/store/hooks'
@@ -14,6 +15,15 @@ type Props = {
 
 export function AuthWrapper({ children }: Props) {
   const dispatch = useAppDispatch()
+
+  const { pathname } = useLocation()
+
+  /**
+   * Automatically scrolls to top whenever pathname changes
+   * */
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [pathname])
 
   /**
    * This done so that if token if deleted window will refresh automatically

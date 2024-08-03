@@ -15,7 +15,7 @@ export const UI_ROUTES = {
   blog: '/store/blog',
   contacts: '/store/contacts',
   cart: '/store/cart',
-  productDetails: '/store/product-details/:id',
+  productDetails: '/store/product-details',
   checkout: '/store/checkout',
   admin: {
     home: '/admin/home',
