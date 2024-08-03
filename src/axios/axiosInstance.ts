@@ -10,7 +10,7 @@ const apiClient = axios.create({
 
 //request interceptors
 apiClient.interceptors.response.use(
-  res => res.data,
+  res => res,
   err => {
     if (err.response.status === 401) {
       console.log('UnAuthorized Access')

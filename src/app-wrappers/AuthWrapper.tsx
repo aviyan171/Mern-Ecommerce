@@ -1,7 +1,6 @@
 import { getUserById } from 'features/auth/api/user-api'
 import { removeUser } from 'features/auth/login/auth-store/user-slice'
 import { firebaseAuth } from 'features/auth/login/firebase/firebase'
-import { AuthUser } from 'features/auth/login/interface'
 import { setAuthState } from 'features/auth/utils/auth-utils'
 import { onAuthStateChanged, signOut } from 'firebase/auth'
 import { useEffect } from 'react'
@@ -35,8 +34,8 @@ export function AuthWrapper({ children }: Props) {
     onAuthStateChanged(firebaseAuth, async user => {
       if (user) {
         try {
-          const userById = (await getUserById(user.uid)) as unknown as AuthUser
-          setAuthState({ dispatch, user: userById })
+          const userById = await getUserById(user.uid)
+          setAuthState({ dispatch, user: userById.data })
         } catch (error) {
           dispatch(removeUser())
         }
