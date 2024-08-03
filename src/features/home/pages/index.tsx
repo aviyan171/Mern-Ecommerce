@@ -1,6 +1,6 @@
-import Banner from '../components/banner/Banner';
-import CoverPage from '../components/cover-page/CoverPage';
-import ProductListing from '../components/product-listing/ProductListing';
+import Banner from '../components/Banner/Banner'
+import CoverPage from '../components/cover-page/CoverPage'
+import ProductListing from '../components/product-listing/ProductListing'
 
 function Home() {
   return (
@@ -9,7 +9,7 @@ function Home() {
       <Banner />
       <ProductListing />
     </div>
-  );
+  )
 }
 
-export default Home;
+export default Home

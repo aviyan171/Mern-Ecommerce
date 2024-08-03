@@ -1,10 +1,10 @@
 import { getUserById } from 'features/auth/api/user-api'
 import { removeUser } from 'features/auth/login/auth-store/user-slice'
 import { firebaseAuth } from 'features/auth/login/firebase/firebase'
-import { AuthUser } from 'features/auth/login/interface'
 import { setAuthState } from 'features/auth/utils/auth-utils'
 import { onAuthStateChanged, signOut } from 'firebase/auth'
 import { useEffect } from 'react'
+import { useLocation } from 'react-router-dom'
 import { LoaderWithBgBlur } from 'shared/components/LoaderWithBgBlur'
 
 import { useAppDispatch } from 'shared/store/hooks'
@@ -15,6 +15,15 @@ type Props = {
 
 export function AuthWrapper({ children }: Props) {
   const dispatch = useAppDispatch()
+
+  const { pathname } = useLocation()
+
+  /**
+   * Automatically scrolls to top whenever pathname changes
+   * */
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [pathname])
 
   /**
    * This done so that if token if deleted window will refresh automatically
@@ -35,8 +44,8 @@ export function AuthWrapper({ children }: Props) {
     onAuthStateChanged(firebaseAuth, async user => {
       if (user) {
         try {
-          const userById = (await getUserById(user.uid)) as unknown as AuthUser
-          setAuthState({ dispatch, user: userById })
+          const userById = await getUserById(user.uid)
+          setAuthState({ dispatch, user: userById.data })
         } catch (error) {
           dispatch(removeUser())
         }
