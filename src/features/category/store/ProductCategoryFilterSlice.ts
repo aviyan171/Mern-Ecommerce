@@ -21,9 +21,12 @@ export const productCategoryFilterSlice = createSlice({
   reducers: {
     setFilter: (state, action: PayloadAction<CategoryFilter>) => {
       state.filter = { ...state.filter, ...action.payload }
+    },
+    resetFilter: state => {
+      state.filter = initialState.filter
     }
   }
 })
 
-export const { setFilter } = productCategoryFilterSlice.actions
+export const { setFilter, resetFilter } = productCategoryFilterSlice.actions
 export const selectFilter = (state: RootState) => state.productCategoryFilter.filter
