@@ -6,7 +6,7 @@ import { useSearchParams } from 'react-router-dom'
 import { useGetProductDetailQuery } from '../services/product-detail-service'
 import { useMemo } from 'react'
 
-function ProductDetails() {
+export function ProductDetails() {
   const [searchParams] = useSearchParams()
 
   const productId = searchParams.get('id') ?? ''
@@ -35,5 +35,3 @@ function ProductDetails() {
     </div>
   )
 }
-
-export default ProductDetails

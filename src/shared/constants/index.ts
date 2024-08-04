@@ -156,3 +156,7 @@ export const adminRoutes = [
     link: UI_ROUTES.admin.orderTable
   }
 ]
+
+export const SHARED_API_ROUTES = {
+  getAllCategories: '/product/categories'
+}
