@@ -7,11 +7,12 @@ import { UI_ROUTES } from 'shared/constants'
 import { AdminLayout } from 'shared/layout/AdminLayout'
 import AuthLayout from 'shared/layout/AuthLayout'
 import Router from '.'
+import { ProductDetails } from 'features/product-details/pages'
 
 const Home = lazy(() => import('features/home/pages'))
 const HomePageLayout = lazy(() => import('shared/layout/HomePageLayout'))
 const Cart = lazy(() => import('features/cart/pages'))
-const ProductDetails = lazy(() => import('features/product-details/pages'))
+// const ProductDetails = lazy(() => import('features/product-details/pages'))
 const Checkout = lazy(() => import('features/checkout/pages'))
 const Contact = lazy(() => import('features/contact/pages'))
 const AdminHome = lazy(() => import('features/admin/home/pages'))
