@@ -1,6 +1,6 @@
-import MaxWidthLayout from 'shared/layout/MaxWidthLayout';
-import CategoryBar from './CategoryBar';
-import CategoryResults from './CategoryResults';
+import MaxWidthLayout from 'shared/layout/MaxWidthLayout'
+import CategoryBar from './CategoryBar'
+import CategoryResults from './CategoryResults'
 
 function CategoryDetails() {
   return (
@@ -11,12 +11,14 @@ function CategoryDetails() {
             <CategoryBar />
           </div>
           <div className="col-span-2 ">
-            <CategoryResults />
+            <div className="flex justify-center items-center">
+              <CategoryResults />
+            </div>
           </div>
         </div>
       </MaxWidthLayout>
     </div>
-  );
+  )
 }
 
-export default CategoryDetails;
+export default CategoryDetails
