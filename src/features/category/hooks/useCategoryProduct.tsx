@@ -6,7 +6,7 @@ import { selectFilter, setFilter } from '../store/ProductCategoryFilterSlice'
 export function useCategoryProduct() {
   const filters = useAppSelector(selectFilter)
   const dispatch = useAppDispatch()
-  const { data } = useGetFilteredCategoryProductQuery({ enabled: true, filters })
+  const { data, isLoading } = useGetFilteredCategoryProductQuery({ enabled: true, filters })
 
   const changeFilters = (filter: CategoryFilter) => {
     dispatch(
@@ -20,6 +20,8 @@ export function useCategoryProduct() {
     changeFilters,
     filters,
     count: data?.data?.count || 0,
-    filteredResultCount: data?.data?.rows?.length || 0
+    filteredResultCount: data?.data?.rows?.length || 0,
+    isLoading,
+    totalPage: data?.data?.totalPage || 1
   }
 }

@@ -1,7 +1,11 @@
+import { useAppSelector } from 'shared/store/hooks'
 import { useCategoryProduct } from '../hooks/useCategoryProduct'
+import { CategoryPagination } from './CategoryPagination'
+import { selectFilter } from '../store/ProductCategoryFilterSlice'
 
 export function CategoryProductSort() {
   const { changeFilters, count, filteredResultCount } = useCategoryProduct()
+  const currentPage = useAppSelector(selectFilter).page
 
   const handleOnSortChange = (value: string) => {
     const v = value as 'oldest' | 'latest'
@@ -11,10 +15,10 @@ export function CategoryProductSort() {
   }
 
   return (
-    <div className="flex justify-between mb-10">
-      <p>
-        Showing 1–{filteredResultCount} of {count} results
-      </p>
+    <div className="flex justify-between mb-10 items-center">
+      <p>Current Page : {currentPage}</p>
+      <CategoryPagination />
+
       <div className="inline">
         <p>
           Sort :
