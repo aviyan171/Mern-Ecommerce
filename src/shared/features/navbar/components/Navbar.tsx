@@ -5,6 +5,7 @@ import { PAGES, UI_ROUTES } from 'shared/constants'
 import MaxWidthLayout from 'shared/layout/MaxWidthLayout'
 import logo from '../../../assets/png/logo.png'
 import { useCountTotalAmount } from 'shared/hooks/useCountTotalAmount'
+import { toast } from 'react-toastify'
 function Navbar() {
   const location = useLocation()
   const navigate = useNavigate()
@@ -12,8 +13,15 @@ function Navbar() {
   const activeRoutes = (routes: string) => {
     return location.pathname === routes
   }
-
   const { totalPrice } = useCountTotalAmount()
+
+  const handleCartClick = () => {
+    if (!totalPrice) {
+      toast('No Item in your cart! Please add some product', { type: 'error' })
+      return
+    }
+    navigate(UI_ROUTES.cart)
+  }
 
   return (
     <div>
@@ -44,7 +52,7 @@ function Navbar() {
                 <li>
                   <FaRegHeart />
                 </li>
-                <li className="flex items-center gap-3 flex-shrink-0 cursor-pointer" onClick={() => navigate(UI_ROUTES.cart)}>
+                <li className="flex items-center gap-3 flex-shrink-0 cursor-pointer" onClick={handleCartClick}>
                   <BsBagCheck color={totalPrice ? 'green' : ''} />
                   <span>$ {totalPrice}</span>
                 </li>
