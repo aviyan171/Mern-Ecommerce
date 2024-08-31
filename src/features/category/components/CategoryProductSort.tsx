@@ -4,7 +4,7 @@ import { CategoryPagination } from './CategoryPagination'
 import { selectFilter } from '../store/ProductCategoryFilterSlice'
 
 export function CategoryProductSort() {
-  const { changeFilters, count, filteredResultCount } = useCategoryProduct()
+  const { changeFilters } = useCategoryProduct()
   const currentPage = useAppSelector(selectFilter).page
 
   const handleOnSortChange = (value: string) => {
