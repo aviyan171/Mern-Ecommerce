@@ -1,9 +1,10 @@
-import CurrentPagesIndicator from 'shared/components/CurrentPagesIndicator';
-import MaxWidthLayout from 'shared/layout/MaxWidthLayout';
-import CartButtonGroup from '../components/CartButtonGroup';
-import CartInfo from '../components/CartInfo';
-import CartItems from '../components/CartItems';
-import CartTotal from '../components/CartTotal';
+import CurrentPagesIndicator from 'shared/components/CurrentPagesIndicator'
+import MaxWidthLayout from 'shared/layout/MaxWidthLayout'
+import CartButtonGroup from '../components/CartButtonGroup'
+import CartInfo from '../components/CartInfo'
+import CartItems from '../components/CartItems'
+import CartTotal from '../components/CartTotal'
+import CartItemLists from '../components/CartItemLists'
 
 const Cart = () => {
   return (
@@ -15,20 +16,18 @@ const Cart = () => {
             <div className="col-span-4 ">
               <div className="mb-7">
                 <CartInfo />
-                <CartItems />
-                <CartItems />
-                <CartItems />
+                <CartItemLists />
               </div>
               <CartButtonGroup />
             </div>
-            <div className=" col-span-2">
+            <div className=" col-span-2 ">
               <CartTotal />
             </div>
           </div>
         </MaxWidthLayout>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Cart;
+export default Cart

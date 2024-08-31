@@ -1,6 +1,9 @@
+import { selectCart, setCart } from 'features/cart/store/CartSlice'
 import { BsHeart } from 'react-icons/bs'
 import { useNavigate } from 'react-router-dom'
 import { UI_ROUTES } from 'shared/constants'
+import { useAppDispatch, useAppSelector } from 'shared/store/hooks'
+import { removeDollarSign } from 'shared/utils'
 
 export type ProductProps = {
   image: string
@@ -11,9 +14,39 @@ export type ProductProps = {
 
 function ProductListItems({ image, name, price, productId }: ProductProps) {
   const navigate = useNavigate()
+  const dispatch = useAppDispatch()
+  const cartItems = useAppSelector(selectCart)
 
   const handleOnClick = () => {
     navigate(`${UI_ROUTES.productDetails}?id=${productId}`)
+  }
+
+  const isProductAlreadyExistsInCart = () => {
+    return cartItems?.find(i => i.productId === productId)
+  }
+
+  const handleAddToCart = () => {
+    if (isProductAlreadyExistsInCart()) return
+    dispatch(
+      setCart({
+        name,
+        photo: image,
+        price: {
+          dollarAppendedPrice: price,
+          originalPrice: removeDollarSign(price)
+        },
+        productId,
+        quantity: 1,
+        total: removeDollarSign(price)
+      })
+    )
+  }
+
+  const handleHover = () => {
+    if (isProductAlreadyExistsInCart()) {
+      return 'group-hover:text-green-500 cursor-default'
+    }
+    return 'group-hover:text-red-500 cursor-pointer'
   }
 
   return (
@@ -36,7 +69,9 @@ function ProductListItems({ image, name, price, productId }: ProductProps) {
 
       <div className="mt-[25px] flex flex-col gap-1">
         <p>{name}</p>
-        <p className="group-hover:text-red-500 cursor-pointer transition-all">+ Add To Cart</p>
+        <p className={handleHover()} onClick={handleAddToCart}>
+          {isProductAlreadyExistsInCart() ? ' ✅ Added to Cart' : '+ Add To Cart'}
+        </p>
         <p className="text-lg font-bold">{price}</p>
       </div>
     </div>

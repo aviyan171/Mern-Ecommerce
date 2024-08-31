@@ -4,6 +4,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { PAGES, UI_ROUTES } from 'shared/constants'
 import MaxWidthLayout from 'shared/layout/MaxWidthLayout'
 import logo from '../../../assets/png/logo.png'
+import { useCountTotalAmount } from 'shared/hooks/useCountTotalAmount'
 function Navbar() {
   const location = useLocation()
   const navigate = useNavigate()
@@ -11,6 +12,8 @@ function Navbar() {
   const activeRoutes = (routes: string) => {
     return location.pathname === routes
   }
+
+  const { totalPrice } = useCountTotalAmount()
 
   return (
     <div>
@@ -42,8 +45,8 @@ function Navbar() {
                   <FaRegHeart />
                 </li>
                 <li className="flex items-center gap-3 flex-shrink-0 cursor-pointer" onClick={() => navigate(UI_ROUTES.cart)}>
-                  <BsBagCheck />
-                  <span>$ 0.00</span>
+                  <BsBagCheck color={totalPrice ? 'green' : ''} />
+                  <span>$ {totalPrice}</span>
                 </li>
               </ul>
             </div>

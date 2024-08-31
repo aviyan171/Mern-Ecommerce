@@ -1,13 +1,13 @@
-import { BsCart } from 'react-icons/bs';
-import { useNavigate } from 'react-router-dom';
-import Button from 'shared/components/Button';
-import { UI_ROUTES } from 'shared/constants';
-import CouponInput from './CouponInput';
+import { BsCart } from 'react-icons/bs'
+import { useNavigate } from 'react-router-dom'
+import Button from 'shared/components/Button'
+import { UI_ROUTES } from 'shared/constants'
+import CouponInput from './CouponInput'
 
 function CartTotal() {
-  const navigate = useNavigate();
+  const navigate = useNavigate()
   return (
-    <div>
+    <div className="sticky top-2">
       <div className="mb-15">
         <CouponInput />
       </div>
@@ -22,16 +22,11 @@ function CartTotal() {
             <p>Total</p>
             <p className=" text-red-500">$ 169.50</p>
           </div>
-          <Button
-            text="Proceed to checkout"
-            onClick={() => navigate(UI_ROUTES.checkout)}
-            prefix
-            icon={<BsCart />}
-          />
+          <Button text="Proceed to checkout" onClick={() => navigate(UI_ROUTES.checkout)} prefix icon={<BsCart />} />
         </div>
       </div>
     </div>
-  );
+  )
 }
 
-export default CartTotal;
+export default CartTotal
