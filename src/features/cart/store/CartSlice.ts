@@ -4,10 +4,18 @@ import { RootState } from 'shared/store/store'
 
 type initialState = {
   cartItems: CartItems[] | null
+  discountDetail: {
+    discountAmount: number
+    couponName: string
+  }
 }
 
 const initialState: initialState = {
-  cartItems: null
+  cartItems: null,
+  discountDetail: {
+    couponName: '',
+    discountAmount: 0
+  }
 }
 
 export const cartSlice = createSlice({
@@ -44,9 +52,19 @@ export const cartSlice = createSlice({
 
     removeAllCartItems: state => {
       state.cartItems = null
+      state.discountDetail = {
+        couponName: '',
+        discountAmount: 0
+      }
+    },
+    setDiscountedAmount: (state, action: PayloadAction<typeof initialState.discountDetail>) => {
+      state.discountDetail = {
+        ...action.payload
+      }
     }
   }
 })
 
-export const { removeAllCartItems, setCart, increaseProduct, decreaseProduct, removeCart } = cartSlice.actions
+export const { removeAllCartItems, setCart, increaseProduct, decreaseProduct, removeCart, setDiscountedAmount } = cartSlice.actions
 export const selectCart = (state: RootState) => state.cart.cartItems
+export const selectDiscountedDetail = (state: RootState) => state.cart.discountDetail

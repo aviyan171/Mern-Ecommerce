@@ -2,6 +2,7 @@ import { getUserById } from 'features/auth/api/user-api'
 import { removeUser } from 'features/auth/login/auth-store/user-slice'
 import { firebaseAuth } from 'features/auth/login/firebase/firebase'
 import { setAuthState } from 'features/auth/utils/auth-utils'
+import { removeAllCartItems } from 'features/cart/store/CartSlice'
 import { onAuthStateChanged, signOut } from 'firebase/auth'
 import { useEffect } from 'react'
 import { useLocation } from 'react-router-dom'
@@ -48,9 +49,11 @@ export function AuthWrapper({ children }: Props) {
           setAuthState({ dispatch, user: userById.data })
         } catch (error) {
           dispatch(removeUser())
+          dispatch(removeAllCartItems())
         }
       } else {
         dispatch(removeUser())
+        dispatch(removeAllCartItems())
       }
     })
   }, [onAuthStateChanged])
