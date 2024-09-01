@@ -11,7 +11,7 @@ import { Dialog } from 'shared/components/Dialog'
 import { Popup } from 'shared/components/Popup'
 import { UI_ROUTES } from 'shared/constants'
 import MaxWidthLayout from 'shared/layout/MaxWidthLayout'
-import { useAppSelector } from 'shared/store/hooks'
+import { useAppDispatch, useAppSelector } from 'shared/store/hooks'
 
 function SignUpBar() {
   const userName = useAppSelector(selectUser)?.name

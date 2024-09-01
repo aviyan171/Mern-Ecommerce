@@ -35,3 +35,8 @@ export type Order = OrderTRquestBody & {
   createdAt: Date
   updatedAt: Date
 }
+
+export type Coupon = {
+  code: string
+  amount: string
+}
