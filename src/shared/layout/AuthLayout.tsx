@@ -1,4 +1,4 @@
-import { Navigate, Outlet, useLocation } from 'react-router-dom'
+import { Navigate, Outlet, useLocation, useSearchParams } from 'react-router-dom'
 import { UI_ROUTES } from 'shared/constants'
 import backGroundImage from '../assets/jpg/LoginBackground.jpg'
 import { useAppSelector } from 'shared/store/hooks'
@@ -12,8 +12,10 @@ function AuthLayout() {
   const path = location.pathname
 
   const isAuthenticated = useAppSelector(isLoggedIn)
+  const [searchParams] = useSearchParams()
+  const redirectUrl = searchParams.get('redirectUrl')
 
-  if (isAuthenticated) return <Navigate to={UI_ROUTES.home} />
+  if (isAuthenticated) return <Navigate to={redirectUrl || UI_ROUTES.home} />
 
   const message: IProps = {
     [UI_ROUTES.login]: 'Sign in to continue to your account',

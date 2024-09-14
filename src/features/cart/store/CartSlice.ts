@@ -38,10 +38,16 @@ export const cartSlice = createSlice({
       matchedProduct.total = matchedProduct.quantity * matchedProduct.price.originalPrice
     },
     decreaseProduct: (state, action: PayloadAction<{ productId: string }>) => {
+      if (!state.cartItems) return
       const matchedProduct = state.cartItems?.find(i => i.productId === action.payload.productId)
       if (!matchedProduct) return
       matchedProduct.quantity -= 1
       matchedProduct.total = matchedProduct.quantity * matchedProduct.price.originalPrice
+      if (matchedProduct.quantity === 0) {
+        const matchedProductIndex = state.cartItems.indexOf(matchedProduct)
+        state.cartItems.splice(matchedProductIndex, 1)
+        state.cartItems = state.cartItems
+      }
     },
     removeCart: (state, action: PayloadAction<{ productId: string }>) => {
       if (!state.cartItems) return

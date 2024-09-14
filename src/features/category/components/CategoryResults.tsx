@@ -13,11 +13,11 @@ function CategoryResults() {
       <NotFoundOrLoadingWrapper count={count} isLoading={isLoading}>
         <div className="grid grid-cols-3 gap-x-5 gap-y-10">
           {data?.data.rows?.map(item => {
-            const { photo, name, price, _id } = item
+            const { photo, name, price, _id, stock } = item
 
             return (
               <div key={_id}>
-                <ProductListItems image={photo[0]} name={name} price={price} productId={_id} />
+                <ProductListItems image={photo[0]} name={name} price={price} productId={_id} stock={stock} />
               </div>
             )
           })}

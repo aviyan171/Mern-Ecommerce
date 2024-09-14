@@ -2,7 +2,6 @@ import CurrentPagesIndicator from 'shared/components/CurrentPagesIndicator'
 import MaxWidthLayout from 'shared/layout/MaxWidthLayout'
 import CartButtonGroup from '../components/CartButtonGroup'
 import CartInfo from '../components/CartInfo'
-import CartItems from '../components/CartItems'
 import CartTotal from '../components/CartTotal'
 import CartItemLists from '../components/CartItemLists'
 

@@ -18,7 +18,7 @@ function ProductListing() {
             {productLists?.data?.map(item => {
               return (
                 <div key={item._id}>
-                  <ProductListItems image={item.photo[0]} name={item.name} price={item.price} productId={item._id} />
+                  <ProductListItems image={item.photo[0]} name={item.name} price={item.price} productId={item._id} stock={item.stock} />
                 </div>
               )
             })}

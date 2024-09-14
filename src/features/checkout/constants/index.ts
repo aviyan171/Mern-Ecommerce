@@ -1,4 +1,4 @@
-import { ICheckoutForm } from '../interface';
+import { ICheckoutForm } from '../interface'
 
 export const checkoutDefaultValues: ICheckoutForm = {
   firstName: '',
@@ -7,10 +7,10 @@ export const checkoutDefaultValues: ICheckoutForm = {
   address: '',
   city: '',
   state: '',
-  zip: '',
+  pinCode: '',
   phone: '',
   email: '',
   orderNotes: '',
   createAccount: false,
-  accountPassword: '',
-};
+  accountPassword: ''
+}

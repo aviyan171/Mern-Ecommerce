@@ -12,6 +12,7 @@ function CartItemLists() {
       productId={i.productId}
       quantity={i.quantity}
       total={i.total}
+      stock={i.stock}
       key={i.productId}
     />
   ))

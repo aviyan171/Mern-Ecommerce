@@ -10,6 +10,7 @@ export type CartItems = {
   quantity: number
   productId: string
   total: number
+  stock: number
 }
 export type ShippingInfo = {
   address: string
