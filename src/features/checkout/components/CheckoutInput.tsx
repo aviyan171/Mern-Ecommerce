@@ -1,12 +1,10 @@
-import RegisterForm from 'shared/components/RegisterForm';
-import FormCheckBox from 'shared/components/form/FormCheckBox';
-import FormInput from 'shared/components/form/FormInput';
+import RegisterForm from 'shared/components/RegisterForm'
 
 function CheckoutInput() {
   return (
     <div>
       <RegisterForm />
-      <div className="mt-5">
+      {/* <div className="mt-5">
         <FormCheckBox name="createAccount" label="Create an account?" />
       </div>
       <p className="mt-4 text-sm">
@@ -19,9 +17,9 @@ function CheckoutInput() {
 
       <div className="mt-5">
         <FormInput name="orderNotes" label="Order Notes" />
-      </div>
+      </div> */}
     </div>
-  );
+  )
 }
 
-export default CheckoutInput;
+export default CheckoutInput

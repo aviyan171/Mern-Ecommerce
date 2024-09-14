@@ -1,7 +1,17 @@
-import Button from 'shared/components/Button';
-import Divider from 'shared/components/Divider';
+import { selectCart, selectDiscountedDetail } from 'features/cart/store/CartSlice'
+import Button from 'shared/components/Button'
+import Divider from 'shared/components/Divider'
+import useCheckUserIsLoggedIn from 'shared/hooks/useCheckUserIsLoggedIn'
+import { useCountTotalAmount } from 'shared/hooks/useCountTotalAmount'
+import { useAppSelector } from 'shared/store/hooks'
 
 function OrderDetails() {
+  const isUserLoggedIn = useCheckUserIsLoggedIn()
+  const cartItems = useAppSelector(selectCart)!
+  const tax = 200
+  const { totalPrice, subTotal } = useCountTotalAmount()
+  const { couponName, discountAmount } = useAppSelector(selectDiscountedDetail)
+
   return (
     <div className="p-8 bg-alabaster w-full sticky top-5">
       <p className="uppercase font-bold text-2xl pb-6">Your order</p>
@@ -14,15 +24,13 @@ function OrderDetails() {
       </div>
       <div className="flex justify-between text-sm ">
         <div className="flex flex-col gap-4">
-          <p>01. Vanilla salted caramel</p>
-          <p>01. Vanilla salted caramel</p>
-          <p>01. Vanilla salted caramel</p>
+          {cartItems?.map((item, index) => (
+            <p>
+              {index + 1}. {item.name}
+            </p>
+          ))}
         </div>
-        <div className="flex flex-col gap-4">
-          <p>$ 300.0</p>
-          <p>$ 300.0</p>
-          <p>$ 300.0</p>
-        </div>
+        <div className="flex flex-col gap-4">{cartItems?.map(item => <p>$ {item.total}</p>)}</div>
       </div>
       <div className="py-4">
         <Divider />
@@ -30,19 +38,23 @@ function OrderDetails() {
       <div className="flex justify-between text-sm ">
         <div>
           <p className="mb-2">Subtotal</p>
+          <p className="mb-2">Tax</p>
+          {!!discountAmount && <p className="mb-2">Discount ( {couponName} )</p>}
           <p>Total</p>
         </div>
         <div className="text-red-500">
-          <p className="mb-2">$ 5000</p>
-          <p>$ 5000</p>
+          <p className="mb-2">$ {subTotal}</p>
+          <p className="mb-2">$ {tax}</p>
+          {!!discountAmount && <p className="mb-2"> $ - {discountAmount}</p>}
+          <p>$ {totalPrice + 200}</p>
         </div>
       </div>
       <div className="mt-4 mb-6">
         <Divider />
       </div>
-      <Button text="Place Order" fullWidth type="submit" />
+      <Button text={isUserLoggedIn ? 'Place Order' : 'Login to Place Order'} fullWidth type="submit" />
     </div>
-  );
+  )
 }
 
-export default OrderDetails;
+export default OrderDetails

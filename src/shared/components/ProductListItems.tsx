@@ -10,9 +10,10 @@ export type ProductProps = {
   name: string
   price: string
   productId: string
+  stock: number
 }
 
-function ProductListItems({ image, name, price, productId }: ProductProps) {
+function ProductListItems({ image, name, price, productId, stock }: ProductProps) {
   const navigate = useNavigate()
   const dispatch = useAppDispatch()
   const cartItems = useAppSelector(selectCart)
@@ -37,7 +38,8 @@ function ProductListItems({ image, name, price, productId }: ProductProps) {
         },
         productId,
         quantity: 1,
-        total: removeDollarSign(price)
+        total: removeDollarSign(price),
+        stock
       })
     )
   }

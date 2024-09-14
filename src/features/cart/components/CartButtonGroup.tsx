@@ -1,19 +1,14 @@
-import { FaSpinner } from 'react-icons/fa';
-import Button from 'shared/components/Button';
+import { useNavigate } from 'react-router-dom'
+import Button from 'shared/components/Button'
+import { UI_ROUTES } from 'shared/constants'
 
 function CartButtonGroup() {
+  const navigate = useNavigate()
   return (
     <div className="flex justify-between">
-      <Button text="Continue Shopping" onClick={() => ''} background="white" />
-      <Button
-        text="Update Cart"
-        onClick={() => ''}
-        background="black"
-        suffix
-        icon={<FaSpinner />}
-      />
+      <Button text="Continue Shopping" onClick={() => navigate(UI_ROUTES.category)} background="white" />
     </div>
-  );
+  )
 }
 
-export default CartButtonGroup;
+export default CartButtonGroup

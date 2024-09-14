@@ -1,6 +1,8 @@
 import { BsChevronLeft, BsChevronRight, BsXLg } from 'react-icons/bs'
 import { useAppDispatch } from 'shared/store/hooks'
 import { decreaseProduct, increaseProduct, removeCart } from '../store/CartSlice'
+import { toast } from 'react-toastify'
+import { TOAST_MESSAGE } from '../constants/cart-constants'
 
 type Props = {
   image: string
@@ -9,11 +11,16 @@ type Props = {
   productId: string
   quantity: number
   total: number
+  stock: number
 }
-const CartItems = ({ image, price, name, productId, quantity, total }: Props) => {
+const CartItems = ({ image, price, name, productId, quantity, total, stock }: Props) => {
   const dispatch = useAppDispatch()
 
   const handleIncrease = () => {
+    if (quantity >= stock) {
+      toast.error(TOAST_MESSAGE.quantityGreaterThanStock)
+      return
+    }
     dispatch(increaseProduct({ productId }))
   }
   const handleDecrease = () => {
