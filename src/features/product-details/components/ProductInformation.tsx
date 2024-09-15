@@ -5,9 +5,11 @@ type Props = {
   price: string
   name: string
   description: string
+  stock: number
+  image: string
 }
 
-function ProductInformation({ price, name, description }: Props) {
+function ProductInformation({ price, name, description, stock, image }: Props) {
   return (
     <div className="flex justify-center">
       <div className="flex flex-col items-center">
@@ -29,7 +31,7 @@ function ProductInformation({ price, name, description }: Props) {
           </div>
         </div> */}
         <div>
-          <SelectQuantityBox />
+          <SelectQuantityBox stock={stock} name={name} image={image} price={price} />
         </div>
         <div className="mt-15 w-full">
           <AdditionalInformation description={description} />

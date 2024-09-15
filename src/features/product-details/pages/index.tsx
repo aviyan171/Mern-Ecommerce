@@ -18,7 +18,8 @@ export function ProductDetails() {
       photo: queryData?.data?.photo || [],
       description: queryData?.data?.description || '',
       price: queryData?.data?.price || '',
-      name: queryData?.data?.name || ''
+      name: queryData?.data?.name || '',
+      stock: queryData?.data?.stock || 0
     }
   }, [queryData?.data?.photo, queryData?.data?.description, queryData?.data?.price, queryData?.data?.name])
 
@@ -29,7 +30,7 @@ export function ProductDetails() {
       </CurrentPagesIndicator>
       <div className="mt-25 mb-13">
         <MaxWidthLayout>
-          <ProductInformation description={data.description} name={data.name} price={data.price} />
+          <ProductInformation description={data.description} name={data.name} price={data.price} stock={data.stock} image={data.photo[0]} />
         </MaxWidthLayout>
       </div>
     </div>
