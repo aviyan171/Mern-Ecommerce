@@ -31,10 +31,10 @@ export const cartSlice = createSlice({
       }
       state.cartItems = handleCartItem()
     },
-    increaseProduct: (state, action: PayloadAction<{ productId: string }>) => {
+    increaseProduct: (state, action: PayloadAction<{ productId: string; quantity?: number }>) => {
       const matchedProduct = state.cartItems?.find(i => i.productId === action.payload.productId)
       if (!matchedProduct) return
-      matchedProduct.quantity += 1
+      matchedProduct.quantity += action.payload.quantity || 1
       matchedProduct.total = matchedProduct.quantity * matchedProduct.price.originalPrice
     },
     decreaseProduct: (state, action: PayloadAction<{ productId: string }>) => {
@@ -44,6 +44,10 @@ export const cartSlice = createSlice({
       matchedProduct.quantity -= 1
       matchedProduct.total = matchedProduct.quantity * matchedProduct.price.originalPrice
       if (matchedProduct.quantity === 0) {
+        state.discountDetail = {
+          couponName: '',
+          discountAmount: 0
+        }
         const matchedProductIndex = state.cartItems.indexOf(matchedProduct)
         state.cartItems.splice(matchedProductIndex, 1)
         state.cartItems = state.cartItems
@@ -51,6 +55,13 @@ export const cartSlice = createSlice({
     },
     removeCart: (state, action: PayloadAction<{ productId: string }>) => {
       if (!state.cartItems) return
+
+      if (state.cartItems.length === 1) {
+        state.discountDetail = {
+          couponName: '',
+          discountAmount: 0
+        }
+      }
       const matchedProduct = state.cartItems.findIndex(i => i.productId === action.payload.productId)
       state.cartItems.splice(matchedProduct, 1)
       state.cartItems = state.cartItems
