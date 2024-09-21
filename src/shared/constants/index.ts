@@ -23,7 +23,8 @@ export const UI_ROUTES = {
     productTable: '/admin/product-table',
     orderTable: '/admin/order-table',
     orderDetails: '/admin/order-details'
-  }
+  },
+  others: '/others'
 }
 
 export const PAGES = [

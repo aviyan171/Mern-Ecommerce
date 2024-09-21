@@ -1,18 +1,22 @@
 function Avatar({
   name,
   onClick,
+  height = '8',
+  width = '8'
 }: {
-  name: React.ReactNode;
-  onClick?: VoidFunction;
+  name: React.ReactNode
+  onClick?: VoidFunction
+  height?: string
+  width?: string
 }) {
   return (
     <div
-      className="text-white bg-black rounded-full p-2 h-8 w-8 cursor-pointer relative"
+      className={`text-white bg-black rounded-full  h-${height} w-${width} cursor-pointer flex justify-center items-center`}
       onClick={onClick}
     >
-      <p className="absolute left-[32%] bottom-[10%]">{name}</p>
+      <p className="">{name}</p>
     </div>
-  );
+  )
 }
 
-export default Avatar;
+export default Avatar
