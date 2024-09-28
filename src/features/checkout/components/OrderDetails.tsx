@@ -25,12 +25,12 @@ function OrderDetails() {
       <div className="flex justify-between text-sm ">
         <div className="flex flex-col gap-4">
           {cartItems?.map((item, index) => (
-            <p>
+            <p key={index}>
               {index + 1}. {item.name}
             </p>
           ))}
         </div>
-        <div className="flex flex-col gap-4">{cartItems?.map(item => <p>$ {item.total}</p>)}</div>
+        <div className="flex flex-col gap-4">{cartItems?.map((item, index) => <p key={index}>$ {item.total}</p>)}</div>
       </div>
       <div className="py-4">
         <Divider />
