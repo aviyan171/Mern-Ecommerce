@@ -36,8 +36,6 @@ function CheckoutForm() {
 
   const { reset, formState } = methods
 
-  console.log(formState.errors, '.....>')
-
   useEffect(() => {
     if (user?.email) {
       reset({
