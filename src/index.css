@@ -92,3 +92,14 @@
     @apply bg-white text-black py-3 px-8;
   }
 }
+
+.input-phone-number input:focus {
+  outline: none !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.PhoneInputCountryIcon PhoneInputCountryIcon--border {
+  background-color: #ffff;
+  box-shadow: none;
+}
