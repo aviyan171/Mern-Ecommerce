@@ -16,6 +16,7 @@ import { selectCart, selectDiscountedDetail } from 'features/cart/store/CartSlic
 import { useCountTotalAmount } from 'shared/hooks/useCountTotalAmount'
 import { convertUrlToLocalPath } from 'shared/utils'
 import { CheckOutSchema } from '../schema/checkout-schema'
+import { useCreateOrderMutation } from '../service/checkout-service'
 
 const defaultValues = checkoutDefaultValues
 function CheckoutForm() {
@@ -33,8 +34,9 @@ function CheckoutForm() {
   const orderItems = useAppSelector(selectCart) ?? []
   const { subTotal, totalPrice } = useCountTotalAmount()
   const userId = useAppSelector(selectUser)?._id || ''
+  const createOrderMutation = useCreateOrderMutation()
 
-  const { reset, formState } = methods
+  const { reset } = methods
 
   useEffect(() => {
     if (user?.email) {
@@ -68,7 +70,7 @@ function CheckoutForm() {
         user: userId
       }
     )
-    console.log({ payload })
+    createOrderMutation.mutate({ data: payload })
   }
 
   return (
@@ -84,7 +86,7 @@ function CheckoutForm() {
               <CheckoutInput />
             </div>
             <div className="flex-[2] ">
-              <OrderDetails />
+              <OrderDetails isLoading={createOrderMutation.isPending} />
             </div>
           </div>
         </div>

@@ -93,7 +93,7 @@ const SelectQuantityBox = ({ stock, name, image, price }: { stock: number; name:
             <BsChevronDown />
           </div>
         </div>
-        <Button text="Add to cart" onClick={handleAddToCart} />
+        <Button text="Add to cart" onClick={handleAddToCart} disabled={!stock} />
       </div>
     </div>
   )
