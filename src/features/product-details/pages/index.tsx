@@ -13,6 +13,8 @@ export function ProductDetails() {
 
   const { queryData } = useGetProductDetailQuery({ enabled: !!productId, id: productId })
 
+  console.log({ queryData })
+
   const data = useMemo(() => {
     return {
       photo: queryData?.data?.photo || [],
@@ -21,7 +23,7 @@ export function ProductDetails() {
       name: queryData?.data?.name || '',
       stock: queryData?.data?.stock || 0
     }
-  }, [queryData?.data?.photo, queryData?.data?.description, queryData?.data?.price, queryData?.data?.name])
+  }, [queryData?.data?.photo, queryData?.data?.description, queryData?.data?.price, queryData?.data?.name, queryData?.data?.stock])
 
   return (
     <div>

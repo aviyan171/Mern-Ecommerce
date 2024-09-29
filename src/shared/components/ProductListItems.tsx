@@ -27,7 +27,7 @@ function ProductListItems({ image, name, price, productId, stock }: ProductProps
   }
 
   const handleAddToCart = () => {
-    if (isProductAlreadyExistsInCart()) return
+    if (isProductAlreadyExistsInCart() || !stock) return
     dispatch(
       setCart({
         name,
@@ -51,6 +51,14 @@ function ProductListItems({ image, name, price, productId, stock }: ProductProps
     return 'group-hover:text-red-500 cursor-pointer'
   }
 
+  const handleCartTitle = () => {
+    if (!stock) return '❌ Out of Stock'
+    if (isProductAlreadyExistsInCart()) {
+      return ' ✅ Added to Cart'
+    }
+    return '+ Add To Cart'
+  }
+
   return (
     <div className="group ">
       <div className="relative">
@@ -72,7 +80,7 @@ function ProductListItems({ image, name, price, productId, stock }: ProductProps
       <div className="mt-[25px] flex flex-col gap-1">
         <p>{name}</p>
         <p className={handleHover()} onClick={handleAddToCart}>
-          {isProductAlreadyExistsInCart() ? ' ✅ Added to Cart' : '+ Add To Cart'}
+          {handleCartTitle()}
         </p>
         <p className="text-lg font-bold">{price}</p>
       </div>

@@ -14,3 +14,7 @@ export const checkoutDefaultValues: ICheckoutForm = {
   createAccount: false,
   accountPassword: ''
 }
+
+export const CHECKOUT_API_ROUTE = {
+  create: '/order/new'
+}

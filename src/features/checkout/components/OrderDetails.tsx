@@ -5,7 +5,10 @@ import useCheckUserIsLoggedIn from 'shared/hooks/useCheckUserIsLoggedIn'
 import { useCountTotalAmount } from 'shared/hooks/useCountTotalAmount'
 import { useAppSelector } from 'shared/store/hooks'
 
-function OrderDetails() {
+type Props = {
+  isLoading: boolean
+}
+function OrderDetails({ isLoading }: Props) {
   const isUserLoggedIn = useCheckUserIsLoggedIn()
   const cartItems = useAppSelector(selectCart)!
   const tax = 200
@@ -52,7 +55,7 @@ function OrderDetails() {
       <div className="mt-4 mb-6">
         <Divider />
       </div>
-      <Button text={isUserLoggedIn ? 'Place Order' : 'Login to Place Order'} fullWidth type="submit" />
+      <Button text={isUserLoggedIn ? 'Place Order' : 'Login to Place Order'} fullWidth type="submit" disabled={isLoading} />
     </div>
   )
 }
