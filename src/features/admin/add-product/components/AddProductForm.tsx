@@ -1,4 +1,4 @@
-import FormInput from 'shared/components/form/FormInput';
+import FormInput from 'shared/components/form/FormInput'
 
 export function AddProductForm() {
   return (
@@ -14,12 +14,8 @@ export function AddProductForm() {
         <FormInput name="price" label="Price" type="number" isRequired />
       </div>
       <div className="mt-3 mb-2">
-        <FormInput
-          name="discountedPrice"
-          label="Discounted Price"
-          type="number"
-        />
+        <FormInput name="discountedPrice" label="Discounted Price" type="number" />
       </div>
     </div>
-  );
+  )
 }

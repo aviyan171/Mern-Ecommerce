@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --host",
     "build": "tsc && vite build",
     "format": "prettier --write \"./**/*.{js,jsx,json,ts,tsx}\"",
     "lint": "eslint src/ --ext .js,.jsx,.ts,.tsx",
