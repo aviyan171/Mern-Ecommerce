@@ -1,7 +1,7 @@
-import { Outlet } from 'react-router-dom';
-import Footer from 'shared/features/footer/pages';
-import Navbar from '../features/navbar/components/Navbar';
-import SignUpBar from '../features/navbar/components/SignUpBar';
+import { Outlet } from 'react-router-dom'
+import Footer from 'shared/features/footer/pages'
+import Navbar from '../features/navbar/components/Navbar'
+import SignUpBar from '../features/navbar/components/SignUpBar'
 
 function HomePageLayout() {
   return (
@@ -13,7 +13,7 @@ function HomePageLayout() {
       </div>
       <Footer />
     </div>
-  );
+  )
 }
 
-export default HomePageLayout;
+export default HomePageLayout
